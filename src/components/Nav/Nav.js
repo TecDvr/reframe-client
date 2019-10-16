@@ -7,7 +7,16 @@ export default class Nav extends React.Component {
             <div className='navContainer'>
                 <Link 
                     style={{ textDecoration: 'none' }} 
-                    to='/'>Home</Link>
+                    to='/'> Home </Link>
+                <Link 
+                    style={{ textDecoration: 'none' }} 
+                    to='/user'> UserHome </Link>
+                <Link 
+                    style={{ textDecoration: 'none' }} 
+                    to='/'> Add </Link>
+                <Link 
+                    style={{ textDecoration: 'none' }} 
+                    to='/'> Feed </Link>
             </div>
         )
     }
