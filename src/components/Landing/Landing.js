@@ -14,7 +14,7 @@ export default class Landing extends React.Component {
                     <Link 
                         style={{ textDecoration: 'none' }} 
                         to='/explore'>
-                            <button className='exploreButton'>explore</button>
+                            <button className='exploreLinkButton'>explore</button>
                     </Link>
                     <Link 
                         style={{ textDecoration: 'none' }} 
