@@ -8,6 +8,12 @@ import Register from '../Register/Register';
 import Nav from '../Nav/Nav';
 import Explore from '../Explore/Explore';
 import UserHome from '../UserHome/UserHome';
+import MistakeOne from '../Mistake/MistakeOne/MistakeOne';
+import MistakeTwo from '../Mistake/MistakeTwo/MistakeTwo';
+import MistakeThree from '../Mistake/MistakeThree/MistakeThree';
+import Plan from '../Plan/Plan';
+import Feed from '../Feed/Feed';
+
 
 //setup .env
 
@@ -15,7 +21,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+    
     }
   }
 
@@ -53,6 +59,36 @@ export default class App extends React.Component {
             exact
             path='/user'
             component={UserHome}
+          />
+
+          <Route
+            exact
+            path='/mistake'
+            component={MistakeOne}
+          />
+
+          <Route
+            exact
+            path='/mistaketwo'
+            component={MistakeTwo}
+          />  
+
+          <Route
+            exact
+            path='/mistakeThree'
+            component={MistakeThree}
+          /> 
+
+          <Route
+            exact
+            path='/plan'
+            component={Plan}
+          /> 
+
+          <Route
+            exact
+            path='/feed'
+            component={Feed}
           />
 
         </div>

@@ -1,0 +1,11 @@
+.mistakeBox {
+    min-height: 10vh;
+    min-width: 100vw;
+    background-color: lightgrey;
+}
+
+.boxText {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}

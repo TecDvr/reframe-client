@@ -13,10 +13,10 @@ export default class Nav extends React.Component {
                     to='/user'> UserHome </Link>
                 <Link 
                     style={{ textDecoration: 'none' }} 
-                    to='/'> Add </Link>
+                    to='/mistaketwo'> Add </Link>
                 <Link 
                     style={{ textDecoration: 'none' }} 
-                    to='/'> Feed </Link>
+                    to='/feed'> Feed </Link>
             </div>
         )
     }

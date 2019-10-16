@@ -14,6 +14,7 @@ export default class Login extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         console.log(this.state);
+        this.props.history.push('/mistake');
     }
     
     render() {
@@ -30,6 +31,8 @@ export default class Login extends React.Component {
                         name='username'
                         id='username'
                         placeholder='Username'
+                        type='text'
+                        value='demoUser'
                         onChange={e => this.setState({username: e.target.value})}>
                     </input>
                     <label htmlFor='password'>password</label>
@@ -39,6 +42,8 @@ export default class Login extends React.Component {
                         name='password'
                         id='password'
                         placeholder='Password'
+                        type='password'
+                        value='demoPassword'
                         onChange={e => this.setState({password: e.target.value})}>
                     </input>
                     {this.state.error ? <p className="error">{this.state.error}</p> :       <div className='demo'>

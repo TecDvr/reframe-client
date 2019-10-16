@@ -38,6 +38,7 @@ export default class Register extends React.Component {
                         name='username'
                         id='username'
                         placeholder='Username'
+                        type='text'
                         onChange={e => this.setState({username: e.target.value})}>
                     </input>
                     <label htmlFor='password'>password</label>
@@ -47,6 +48,7 @@ export default class Register extends React.Component {
                         name='password'
                         id='password'
                         placeholder='Password'
+                        type='text'
                         onChange={e => this.setState({password: e.target.value})}>
                     </input>
                     <label htmlFor='email'>email</label>
@@ -56,6 +58,7 @@ export default class Register extends React.Component {
                         name='email'
                         id='email'
                         placeholder='Email'
+                        type='email'
                         onChange={e => this.setState({email: e.target.value})}>
                     </input>
                     <button 
