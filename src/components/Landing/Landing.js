@@ -10,7 +10,7 @@ export default class Landing extends React.Component {
                     <h1>reframe</h1>
                     <p>reframe your mistakes</p>
                 </header>
-                <body>
+                <main>
                     <Link 
                         style={{ textDecoration: 'none' }} 
                         to='/explore'>
@@ -21,7 +21,7 @@ export default class Landing extends React.Component {
                         to='/login'>
                             <button className='loginButton'>login</button>
                     </Link>
-                </body>
+                </main>
             </div>
         )
     }

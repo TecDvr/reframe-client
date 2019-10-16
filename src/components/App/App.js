@@ -7,6 +7,8 @@ import Nav from '../Nav/Nav';
 import Explore from '../Explore/Explore';
 import './App.css';
 
+//setup .env
+
 export default class App extends React.Component {
   render() {
     return (
