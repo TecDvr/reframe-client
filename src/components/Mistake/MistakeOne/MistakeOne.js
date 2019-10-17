@@ -1,4 +1,5 @@
 import React from 'react';
+import './MistakeOne.css'
 
 export default class MistakeOne extends React.Component {
     handleYesClick(e) {

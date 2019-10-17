@@ -10,25 +10,33 @@ export default class Register extends React.Component {
         this.state = {
             username: '',
             password: '',
-            email: ''
+            verifyPassword: '',
+            email: '',
+            error: false
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state)
+        console.log(this.state);
+        this.handleVerifyPassword();
     }
 
-    handleLogin(e) {
-        e.preventDefault()
-        console.log('Youre logged in')
+    handleVerifyPassword() {
+        if (this.state.password === this.state.verifyPassword) {
+            this.props.history.push('/user');
+        } else {
+            this.setState({
+                error: true
+            })
+        }   
     }
 
     render() {
         return (
             <div className='registerContainer'>
                 <header>
-                    <h1>Register Test</h1>
+                    <h1>Register</h1>
                 </header>
                 <form className='registerForm' onSubmit={e => this.handleSubmit(e)}>
                     <label htmlFor='username'>username</label>
@@ -41,20 +49,30 @@ export default class Register extends React.Component {
                         type='text'
                         onChange={e => this.setState({username: e.target.value})}>
                     </input>
-                    <label htmlFor='password'>password</label>
+                    {this.state.password === this.state.verifyPassword ? <label htmlFor='password'>PASSWORD</label> : <label htmlFor='password'>password</label>}
                     <input
                         className='registerInput'
                         required
                         name='password'
                         id='password'
                         placeholder='Password'
-                        type='text'
+                        type='password'
                         onChange={e => this.setState({password: e.target.value})}>
                     </input>
-                    <label htmlFor='email'>email</label>
+                    {this.state.password === this.state.verifyPassword ? <label htmlFor='verifyPassword'>VERIFY PASSWORD</label> : <label htmlFor='verifyPassword'>verify password</label>}
                     <input
                         className='registerInput'
                         required
+                        name='verifyPassword'
+                        id='verifyPassword'
+                        placeholder='Verify Password'
+                        type='password'
+                        onChange={e => this.setState({verifyPassword: e.target.value})}>
+                    </input>
+                    {this.state.error === true ? <p>Passwords do NOT match!</p> : null}
+                    <label htmlFor='email'>email</label>
+                    <input
+                        className='registerInput'
                         name='email'
                         id='email'
                         placeholder='Email'
@@ -64,7 +82,6 @@ export default class Register extends React.Component {
                     <button 
                         className='registerButton' 
                         type='submit'
-                        onClick={e => this.handleLogin(e)}
                     >submit</button>  
                 </form>
             </div>

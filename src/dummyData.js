@@ -50,7 +50,7 @@ export default {
         },
         {
             'id': 4,
-            'user_id': 15,
+            'user_id': 14,
             'posting_date': '10-20-2019',
             'mistake_nickname': 'missed hold',
             'mistake': 'I tried to show off climbing and missed a hold, now im dead',
@@ -62,7 +62,7 @@ export default {
         },
         {
             'id': 4,
-            'user_id': 15,
+            'user_id': 14,
             'posting_date': '10-20-2019',
             'mistake_nickname': 'missed hold',
             'mistake': 'I tried to show off climbing and missed a hold, now im dead',
@@ -73,6 +73,117 @@ export default {
             'what_learn': 'to focus on myself self and not lady climbers'
         },
         {
+            'id': 4,
+            'user_id': 14,
+            'posting_date': '10-20-2019',
+            'mistake_nickname': 'missed hold',
+            'mistake': 'I tried to show off climbing and missed a hold, now im dead',
+            'box_checked': false,
+            'went_wrong': 'slipped',
+            'why_wrong': 'I was trying to show off',
+            'what_doing': 'I was trying to look cool',
+            'what_learn': 'to focus on myself self and not lady climbers'
+        },
+        {
+            'id': 4,
+            'user_id': 14,
+            'posting_date': '10-20-2019',
+            'mistake_nickname': 'missed hold',
+            'mistake': 'I tried to show off climbing and missed a hold, now im dead',
+            'box_checked': false,
+            'went_wrong': 'slipped',
+            'why_wrong': 'I was trying to show off',
+            'what_doing': 'I was trying to look cool',
+            'what_learn': 'to focus on myself self and not lady climbers'
+        },{
+            'id': 4,
+            'user_id': 15,
+            'posting_date': '10-20-2019',
+            'mistake_nickname': 'missed hold',
+            'mistake': 'I tried to show off climbing and missed a hold, now im dead',
+            'box_checked': false,
+            'went_wrong': 'slipped',
+            'why_wrong': 'I was trying to show off',
+            'what_doing': 'I was trying to look cool',
+            'what_learn': 'to focus on myself self and not lady climbers'
+        },{
+            'id': 4,
+            'user_id': 15,
+            'posting_date': '10-20-2019',
+            'mistake_nickname': 'missed hold',
+            'mistake': 'I tried to show off climbing and missed a hold, now im dead',
+            'box_checked': false,
+            'went_wrong': 'slipped',
+            'why_wrong': 'I was trying to show off',
+            'what_doing': 'I was trying to look cool',
+            'what_learn': 'to focus on myself self and not lady climbers'
+        },{
+            'id': 4,
+            'user_id': 15,
+            'posting_date': '10-20-2019',
+            'mistake_nickname': 'missed hold',
+            'mistake': 'I tried to show off climbing and missed a hold, now im dead',
+            'box_checked': false,
+            'went_wrong': 'slipped',
+            'why_wrong': 'I was trying to show off',
+            'what_doing': 'I was trying to look cool',
+            'what_learn': 'to focus on myself self and not lady climbers'
+        },{
+            'id': 4,
+            'user_id': 15,
+            'posting_date': '10-20-2019',
+            'mistake_nickname': 'missed hold',
+            'mistake': 'I tried to show off climbing and missed a hold, now im dead',
+            'box_checked': false,
+            'went_wrong': 'slipped',
+            'why_wrong': 'I was trying to show off',
+            'what_doing': 'I was trying to look cool',
+            'what_learn': 'to focus on myself self and not lady climbers'
+        },{
+            'id': 4,
+            'user_id': 15,
+            'posting_date': '10-20-2019',
+            'mistake_nickname': 'missed hold',
+            'mistake': 'I tried to show off climbing and missed a hold, now im dead',
+            'box_checked': false,
+            'went_wrong': 'slipped',
+            'why_wrong': 'I was trying to show off',
+            'what_doing': 'I was trying to look cool',
+            'what_learn': 'to focus on myself self and not lady climbers'
+        },{
+            'id': 4,
+            'user_id': 15,
+            'posting_date': '10-20-2019',
+            'mistake_nickname': 'missed hold',
+            'mistake': 'I tried to show off climbing and missed a hold, now im dead',
+            'box_checked': false,
+            'went_wrong': 'slipped',
+            'why_wrong': 'I was trying to show off',
+            'what_doing': 'I was trying to look cool',
+            'what_learn': 'to focus on myself self and not lady climbers'
+        },{
+            'id': 4,
+            'user_id': 15,
+            'posting_date': '10-20-2019',
+            'mistake_nickname': 'missed hold',
+            'mistake': 'I tried to show off climbing and missed a hold, now im dead',
+            'box_checked': false,
+            'went_wrong': 'slipped',
+            'why_wrong': 'I was trying to show off',
+            'what_doing': 'I was trying to look cool',
+            'what_learn': 'to focus on myself self and not lady climbers'
+        },{
+            'id': 4,
+            'user_id': 15,
+            'posting_date': '10-20-2019',
+            'mistake_nickname': 'missed hold',
+            'mistake': 'I tried to show off climbing and missed a hold, now im dead',
+            'box_checked': false,
+            'went_wrong': 'slipped',
+            'why_wrong': 'I was trying to show off',
+            'what_doing': 'I was trying to look cool',
+            'what_learn': 'to focus on myself self and not lady climbers'
+        },{
             'id': 4,
             'user_id': 15,
             'posting_date': '10-20-2019',

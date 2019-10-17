@@ -1,0 +1,22 @@
+.registerContainer {
+    min-height: 60vh;
+    min-width: 50vh;
+    background-color: lightgrey;
+    border-radius: 20px;
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.demoButton {
+    background-color: white;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+}

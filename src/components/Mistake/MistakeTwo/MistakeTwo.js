@@ -1,4 +1,5 @@
 import React from 'react';
+import './MistakeTwo.css';
 
 export default class Mistake extends React.Component {
     constructor(props) {
@@ -7,7 +8,8 @@ export default class Mistake extends React.Component {
             how_bad: 0,
             mistake_nickname: '',
             mistake: '',
-            share: false
+            share: false,
+            howBad: 0
         }
     }
 
@@ -19,23 +21,21 @@ export default class Mistake extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='mistakeContainer'>
                 <header>
                     <h1>Own Your Mistake...</h1>
                     <p>Don't depend on will power alone</p>
                 </header>
                 <main>
+                    <div className='buttonContainer'>
+                        <h3>How bad was it?</h3>
+                        <button className='imgButton' onClick={() => this.setState({howBad: 1})}>not that bad</button>
+                        <button className='imgButton' onClick={() => this.setState({howBad: 2})}>kinda bad</button>
+                        <button className='imgButton' onClick={() => this.setState({howBad: 3})}>pretty bad</button>
+                        <button className='imgButton' onClick={() => this.setState({howBad: 4})}>really bad</button>
+                        {this.state.howBad > 2 ? <p>That bad huh? Don't worry though, we've got your back</p> : <p>You can still learn a lot from the smallest mistakes</p>}
+                    </div>
                     <form className='mistaketwoForm' onSubmit={e => this.handleSubmit(e)}>
-                        <label htmlFor='howBad'>How bad was it?</label>
-                        <input 
-                            required
-                            type='range' 
-                            name='howBad' 
-                            id='howBad' 
-                            min='0' 
-                            max='5'
-                            onChange={e => this.setState({how_bad: e.target.value})}>
-                        </input>
                         <label htmlFor='mistakeNickname'>Mistake Nickname</label>
                         <input
                             required
@@ -46,16 +46,19 @@ export default class Mistake extends React.Component {
                             onChange={e => this.setState({mistake_nickname: e.target.value})}>
                         </input>
                         <label htmlFor='mistake'>Your Mistake</label>
-                        <input
+                        <textarea
+                            rows='20'
+                            cols='2'
+                            wrap='hard'
                             required
                             placeholder='Todays mistake was...'
-                            type='text'
                             name='mistake'
                             id='mistake'
                             onChange={e => this.setState({mistake: e.target.value})}>
-                        </input>
+                        </textarea>
                         <label htmlFor='share'>Share?</label>
                         <input
+                            className='imgButton'
                             type='checkbox'
                             name='share'
                             id='share'
