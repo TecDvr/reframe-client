@@ -13,7 +13,7 @@ import MistakeTwo from '../Mistake/MistakeTwo/MistakeTwo';
 import MistakeThree from '../Mistake/MistakeThree/MistakeThree';
 import Plan from '../Plan/Plan';
 import Feed from '../Feed/Feed';
-
+import dummyMistakes from '../../dummyData';
 
 //setup .env
 
@@ -21,8 +21,12 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    
+      mistake: dummyMistakes
     }
+  }
+
+  componentDidMount() {
+    console.log(this.state);
   }
 
   render() {

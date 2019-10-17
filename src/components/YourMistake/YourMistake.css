@@ -1,0 +1,16 @@
+.yourMistakeContainer {
+    min-height: 10vh;
+    width: 95vw;
+    background-color: lightgrey;
+    border-radius: 20px;
+}
+
+.boxText {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.deleteButton {
+    background-color: white;
+}

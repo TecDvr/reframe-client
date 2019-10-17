@@ -5,6 +5,7 @@ export default class Mistake extends React.Component {
         super(props);
         this.state = {
             how_bad: 0,
+            mistake_nickname: '',
             mistake: '',
             share: false
         }
@@ -34,6 +35,15 @@ export default class Mistake extends React.Component {
                             min='0' 
                             max='5'
                             onChange={e => this.setState({how_bad: e.target.value})}>
+                        </input>
+                        <label htmlFor='mistakeNickname'>Mistake Nickname</label>
+                        <input
+                            required
+                            placeholder='Mistake nickname'
+                            type='text'
+                            name='mistakeNickname'
+                            id='mistakeNickname'
+                            onChange={e => this.setState({mistake_nickname: e.target.value})}>
                         </input>
                         <label htmlFor='mistake'>Your Mistake</label>
                         <input
