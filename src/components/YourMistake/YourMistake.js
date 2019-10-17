@@ -7,8 +7,14 @@ export default class YourMistake extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            boxOpen: false
+            boxOpen: true
         }
+    }
+
+    handleClick() {
+        this.setState({
+            boxOpen: !this.state.boxOpen
+        })
     }
 
     handleDelete() {
@@ -17,19 +23,30 @@ export default class YourMistake extends React.Component {
 
     render() {
         return (
-            <div className='yourMistakeContainer'>
-                <div className='boxTitle'>
-                    <h2>{this.props.nickname}</h2>
-                    <p>{this.props.date}</p>
-                    {this.props.shared === true ? <p>This mistake is shared</p> : <p>You did not share this mistake</p>}
-                </div>
-                <div className='boxText'>
-                    <p>{this.props.mistakemade}</p>
-                </div>
-                <div>
-                    <p>your plan</p>
-                </div>
-                <button className='deleteButton' type='button' onClick={() => this.handleDelete()}>delete mistake</button>
+            <div className='yourMistakeContainer' onClick={() => this.handleClick()}>
+                {this.state.boxOpen === false ?
+                    <div>
+                        <div className='boxTitle'>
+                            <h2>{this.props.nickname}</h2>
+                            <p>{this.props.date}</p>
+                            {this.props.shared === true ? <p>This mistake is shared</p> : <p>You did not share this mistake</p>}
+                        </div>
+                        <div className='boxText'>
+                            <p>{this.props.mistakemade}</p>
+                        </div>
+                        <div>
+                            <p>your plan</p>
+                        </div>
+                        <button className='deleteButton' type='button' onClick={() => this.handleDelete()}>delete mistake</button>
+                    </div> 
+                    : 
+                    <div>
+                        <div className='boxTitle'>
+                            <h2>{this.props.nickname}</h2>
+                            <p>{this.props.date}</p>
+                        </div>
+                    </div> 
+                }
             </div>
         )
     }
