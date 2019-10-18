@@ -1,0 +1,15 @@
+.planContainer {
+    min-height: 60vh;
+    min-width: 50vh;
+    background-color: lightgrey;
+    border-radius: 20px;
+}
+
+.planForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}

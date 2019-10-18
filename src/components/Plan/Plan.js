@@ -1,4 +1,5 @@
 import React from 'react';
+import './Plan.css'
 
 export default class Plan extends React.Component {
     constructor(props) {
@@ -20,7 +21,7 @@ export default class Plan extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='planContainer'>
                 <header>
                     <h1>Plan</h1>
                     <p>Being reasonable with your expectaions of your self is half the battle, or more!</p>

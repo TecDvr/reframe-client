@@ -1,4 +1,5 @@
 import React from 'react';
+import './MistakeThree.css'
 
 export default class Mistake extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ export default class Mistake extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='mistakeContainer'>
                 <header>
                     <h1>Time to Reflect...</h1>
                     <p>Seeing your response on paper helps you think more logically</p>
