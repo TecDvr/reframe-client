@@ -5,4 +5,23 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-  }
+}
+
+/* buttons will have diff styles */
+.exploreLinkButton {
+  background-color: grey;
+  color: white;
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.loginButton {
+  background-color: grey;
+  color: white;
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  margin: 10px;
+}

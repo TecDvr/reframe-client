@@ -11,18 +11,29 @@ export default class UserHome extends React.Component {
                 <header>
                     <h1>User Home</h1>
                 </header>
-
-                <div>
-                    {this.context.mistake.dummyMistakes.filter(mistake => mistake.user_id === 14).map((mistake, index) => 
-                        <YourMistake 
-                            key={`mistake-${index}`}
-                            nickname={mistake.mistake_nickname}
-                            date={mistake.posting_date}
-                            mistakemade={mistake.mistake}
-                            shared={mistake.box_checked}
-                        />
-                    )}
-                </div>
+                <main>
+                    <div>
+                        <p>Your mistakes are: NOT SO BAD</p>
+                        <p>You have made 8 mistakes</p>
+                    </div>
+                    <div>
+                        {this.context.mistake.dummyMistakes.filter(mistake => mistake.user_id === 14).map((mistake, index) => 
+                            <YourMistake 
+                                key={`mistake-${index}`}
+                                nickname={mistake.mistake_nickname}
+                                date={mistake.posting_date}
+                                mistakemade={mistake.mistake}
+                                shared={mistake.box_checked}
+                                planone={mistake.plan_one}
+                                plantwo={mistake.plan_two}
+                                planthree={mistake.plan_three}
+                                planfour={mistake.plan_four}
+                                planfive={mistake.plan_five}
+                                thoughts={mistake}
+                            />
+                        )}
+                    </div>
+                </main>                
             </div>
         )
     }

@@ -1,6 +1,5 @@
 import React from 'react';
 import './Register.css';
-import config from '../../config';
 
 export default class Register extends React.Component {
     constructor(props) {
@@ -8,31 +7,20 @@ export default class Register extends React.Component {
         this.state = {
             username: '',
             user_password: '',
-            //verifyPassword: null,
-            email: null,
-            error: null
+            verifyPassword: '',
+            email: '',
+            error: false
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state);
         this.handleVerifyPassword();
     }
 
     handleVerifyPassword() {
         if (this.state.password === this.state.verifyPassword) {
             this.props.history.push('/user');
-            fetch(`${config.API_ENDPOINT}/user`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(this.state) 
-            })
-            .then(res => 
-                res.json()
-            )
         } else {
             this.setState({
                 error: true

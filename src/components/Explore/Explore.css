@@ -1,0 +1,24 @@
+.exploreButton {
+    background-color: grey;
+    color: white;
+    height: 30px;
+    width: 50px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.demoButton {
+    background-color: grey;
+    color: white;
+    height: 30px;
+    width: 50px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.exploreText {
+    background-color: grey;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+}

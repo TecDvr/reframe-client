@@ -20,7 +20,7 @@ export default class Nav extends React.Component {
     render() {
         return (
             <div className='navContainer'>
-                <div className='menuOption' onClick={() => this.handleMenu()}></div>
+                <div className='menuOption' onClick={() => this.handleMenu()}>menu</div>
                 {this.state.menuOpen === true ? 
                 <div>
                     <div className='menuOption' onClick={() => this.handleMenu()}>

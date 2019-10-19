@@ -1,6 +1,5 @@
 import React from 'react';
 import './Login.css';
-import config from '../../config';
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -14,29 +13,10 @@ export default class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        window.localStorage.setItem('zachs-token-son',
-            window.btoa(`${this.state.username}:${this.state.user_password}`)
-        )
-        fetch(`${config.API_ENDPOINT}/login`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(this.state)
-        })
-        .then(res =>
-            (res.ok)
-                ? res.json().then(user => {
-                    window.localStorage.setItem('userID',user.id)
-                    this.props.history.push('/mistake');
-                    console.log('working')
-                })
-                : res.json().then(resJson=>this.setState({error:resJson.error}))
-                
-        )
+        this.props.history.push('/mistake');
     }
     
-    render() {
+    render() { 
         return (
             <div className='loginContainer'>
                 <header>
