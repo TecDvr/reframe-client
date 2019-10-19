@@ -1,20 +1,39 @@
 import React from 'react';
 import './Login.css';
+import config from '../../config';
 
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             username: '',
-            password: '',
+            user_password: '',
             error: null
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state);
-        this.props.history.push('/mistake');
+        window.localStorage.setItem('zachs-token-son',
+            window.btoa(`${this.state.username}:${this.state.user_password}`)
+        )
+        fetch(`${config.API_ENDPOINT}/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(this.state)
+        })
+        .then(res =>
+            (res.ok)
+                ? res.json().then(user => {
+                    window.localStorage.setItem('userID',user.id)
+                    this.props.history.push('/mistake');
+                    console.log('working')
+                })
+                : res.json().then(resJson=>this.setState({error:resJson.error}))
+                
+        )
     }
     
     render() {
@@ -32,7 +51,6 @@ export default class Login extends React.Component {
                         id='username'
                         placeholder='Username'
                         type='text'
-                        value='demoUser'
                         onChange={e => this.setState({username: e.target.value})}>
                     </input>
                     <label htmlFor='password'>password</label>
@@ -43,7 +61,6 @@ export default class Login extends React.Component {
                         id='password'
                         placeholder='Password'
                         type='password'
-                        value='demoPassword'
                         onChange={e => this.setState({password: e.target.value})}>
                     </input>
                     {this.state.error ? <p className="error">{this.state.error}</p> : <div className='demo'>

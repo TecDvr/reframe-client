@@ -15,7 +15,8 @@ export default class Nav extends React.Component {
             menuOpen: !this.state.menuOpen
         })
     }
-
+    
+    //not on entire menu for onclick
     render() {
         return (
             <div className='navContainer'>
