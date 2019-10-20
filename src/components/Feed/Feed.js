@@ -13,7 +13,7 @@ export default class Feed extends React.Component {
                     <p>tell the world what you did and be free</p>
                 </header>
                 <main>
-                    {this.context.mistake.dummyMistakes.map((mistake, index) => 
+                    {this.context.mistake.map((mistake, index) => 
                         <MistakeFeed 
                             key={`mistake-${index}`}
                             date={mistake.posting_date}

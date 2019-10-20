@@ -13,20 +13,28 @@ import MistakeTwo from '../Mistake/MistakeTwo/MistakeTwo';
 import MistakeThree from '../Mistake/MistakeThree/MistakeThree';
 import Plan from '../Plan/Plan';
 import Feed from '../Feed/Feed';
-import dummyMistakes from '../../dummyData';
-
-//setup .env
+//import dummyMistakes from '../../dummyData';
+import config from '../../config';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mistake: dummyMistakes
+      mistake: []
     }
   }
 
   componentDidMount() {
-    console.log(this.state);
+    fetch(`${config.API_ENDPOINT}/mistake`, {
+      method: 'GET'
+    })
+    .then(res => res.json())
+    .then(resJSON => {
+      this.setState({
+        mistake: resJSON
+      })
+      console.log(this.state)
+    })
   }
 
   render() {
