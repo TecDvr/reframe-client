@@ -13,7 +13,6 @@ import MistakeTwo from '../Mistake/MistakeTwo/MistakeTwo';
 import MistakeThree from '../Mistake/MistakeThree/MistakeThree';
 import Plan from '../Plan/Plan';
 import Feed from '../Feed/Feed';
-//import dummyMistakes from '../../dummyData';
 import config from '../../config';
 
 export default class App extends React.Component {

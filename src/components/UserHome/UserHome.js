@@ -2,9 +2,11 @@ import React from 'react';
 import YourMistake from '../YourMistake/YourMistake';
 import ReframeContext from '../../context/reframe-context';
 
+let userID = window.localStorage.getItem('userID')
+
 export default class UserHome extends React.Component {
     static contextType = ReframeContext;
-   
+
     render() {
         return (
             <div>
@@ -18,7 +20,7 @@ export default class UserHome extends React.Component {
                         <p>You have gone 4 days without a mistake</p>
                     </div>
                     <div>
-                        {this.context.mistake.dummyMistakes.filter(mistake => mistake.user_id === 14).map((mistake, index) => 
+                        {this.context.mistake.filter(mistake => mistake.user_id == userID).map((mistake, index) => 
                             <YourMistake 
                                 key={`mistake-${index}`}
                                 nickname={mistake.mistake_nickname}

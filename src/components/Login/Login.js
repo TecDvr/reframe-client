@@ -25,10 +25,10 @@ export default class Login extends React.Component {
             },
             body: JSON.stringify(this.state)
         })
-        .then(res => 
+        .then(res =>
             (res.ok) 
                 ? res.json().then(user => {
-                window.localStorage.setItem('userID',user.id)
+                window.localStorage.setItem('userID', user.id)
                 this.props.history.push('/mistake')
             })
             : res.json().then(resJson=>this.setState({error:resJson.error}))

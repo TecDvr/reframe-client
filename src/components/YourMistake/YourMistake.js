@@ -2,8 +2,6 @@ import React from 'react';
 import './YourMistake.css';
 import ReframeContext from '../../context/reframe-context'
 
-// delete button only shows after a few days of it being up...
-
 export default class YourMistake extends React.Component {
     static contextType = ReframeContext;
     constructor(props) {
