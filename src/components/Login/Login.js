@@ -27,7 +27,7 @@ export default class Login extends React.Component {
         })
         .then(res =>
             (res.ok)
-                ? res.text().then(user => {
+                ? res.json().then(user => {
                 window.localStorage.setItem('userID',user.id)
                 this.props.history.push('/mistake')
             })
