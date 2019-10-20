@@ -15,6 +15,7 @@ export default class UserHome extends React.Component {
                     <div>
                         <p>Your mistakes are: NOT SO BAD</p>
                         <p>You have made 8 mistakes</p>
+                        <p>You have gone 4 days without a mistake</p>
                     </div>
                     <div>
                         {this.context.mistake.dummyMistakes.filter(mistake => mistake.user_id === 14).map((mistake, index) => 
