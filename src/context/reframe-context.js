@@ -1,5 +1,5 @@
 import React from 'react';
 
-const ReframeContext = React.createContext()
+const ReframeContext = React.createContext();
 
 export default ReframeContext

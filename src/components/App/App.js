@@ -19,7 +19,29 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mistake: []
+      mistake: [],
+      mistakeData: {
+        posting_date: 'now()',
+        how_bad: '',
+        mistake_nickname: '',
+        mistake: '',
+        box_checked: false,
+        went_wrong: '',
+        why_wrong: '',
+        what_doing: '',
+        what_learn: '',
+        plan_one: '',
+        plan_two: '',
+        plan_three: '',
+        plan_four: '',
+        plan_five: ''
+      },
+      storeMistakes : (key, value) => {
+        let newMistake = this.state.mistakeData;
+        newMistake[key] = value;
+
+        this.setState({ mistakeData: newMistake})
+      }
     }
   }
 
@@ -32,7 +54,6 @@ export default class App extends React.Component {
       this.setState({
         mistake: resJSON
       })
-      console.log(this.state)
     })
   }
 

@@ -20,7 +20,6 @@ export default class Feed extends React.Component {
                             mistakemade={mistake.mistake}
                         />
                     )}
-                    
                 </main>
             </div>
         )

@@ -1,22 +1,27 @@
 import React from 'react';
-import './Plan.css'
+import './Plan.css';
+import config from '../../config';
+import ReframeContext  from '../../context/reframe-context';
 
 export default class Plan extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            plan_one: '',
-            plan_two: null,
-            plan_three: null,
-            plan_four: null,
-            plan_five: null
-        }
-    }
+    static contextType = ReframeContext
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state);
-        this.props.history.push('/user');
+        console.log(this.context.mistakeData);
+        fetch(`${config.API_ENDPOINT}/mistake`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `basic ${window.localStorage.getItem('zachs-token')}`
+            },
+            body: JSON.stringify(this.context.mistakeData)
+        })
+        .then(res =>
+                res.json().then(user => {
+                this.props.history.push('/user')
+                })   
+        )
     }
 
     render() {
@@ -35,7 +40,7 @@ export default class Plan extends React.Component {
                             name='planOne'
                             id='planOne'
                             placeholder='planOne'
-                            onChange={e => this.setState({plan_one: e.target.value})}>
+                            onChange={e => this.context.storeMistakes('plan_one', e.target.value)}>
                         </input>
                         <label htmlFor='planTwo'>Plan Two</label>
                         <input
@@ -43,7 +48,7 @@ export default class Plan extends React.Component {
                             name='planTwo'
                             id='planTwo'
                             placeholder='planTwo'
-                            onChange={e => this.setState({plan_two: e.target.value})}>
+                            onChange={e => this.context.storeMistakes('plan_two', e.target.value)}>
                         </input>
                         <label htmlFor='planThree'>Plan Three</label>
                         <input
@@ -51,7 +56,7 @@ export default class Plan extends React.Component {
                             name='planThree'
                             id='planThree'
                             placeholder='planThreee'
-                            onChange={e => this.setState({plan_three: e.target.value})}>
+                            onChange={e => this.context.storeMistakes('plan_three', e.target.value)}>
                         </input>
                         <label htmlFor='planFour'>Plan Four</label>
                         <input
@@ -59,7 +64,7 @@ export default class Plan extends React.Component {
                             name='planFour'
                             id='planFour'
                             placeholder='planFour'
-                            onChange={e => this.setState({plan_four: e.target.value})}>
+                            onChange={e => this.context.storeMistakes('plan_four', e.target.value)}>
                         </input>
                         <label htmlFor='planFive'>Plan Five</label>
                         <input
@@ -67,7 +72,7 @@ export default class Plan extends React.Component {
                             name='planFive'
                             id='planFive'
                             placeholder='planFive'
-                            onChange={e => this.setState({plan_five: e.target.value})}>
+                            onChange={e => this.context.storeMistakes('plan_five', e.target.value)}>
                         </input>
                         <button className='planButton' type='submit'>Submit</button>
                     </form>
