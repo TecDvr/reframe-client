@@ -1,6 +1,7 @@
 import React from 'react';
 import MistakeFeed from '../MistakeFeed/MistakeFeed';
 import ReframeContext from '../../context/reframe-context';
+import Nav from '../Nav/Nav';
 
 export default class Feed extends React.Component {
     static contextType = ReframeContext;
@@ -8,20 +9,24 @@ export default class Feed extends React.Component {
     render() {
         return (
             <div>
-                <header>
-                    <h1>Mistakes Feed</h1>
-                    <p>tell the world what you did and be free</p>
-                </header>
-                <main>
-                    {this.context.mistake.map((mistake, index) => 
-                        <MistakeFeed 
-                            key={`mistake-${index}`}
-                            date={mistake.posting_date}
-                            mistakemade={mistake.mistake}
-                        />
-                    )}
-                </main>
+                <Nav />
+                <div>
+                    <header>
+                        <h1>Mistakes Feed</h1>
+                        <p>tell the world what you did and be free</p>
+                    </header>
+                    <main>
+                        {this.context.mistake.map((mistake, index) => 
+                            <MistakeFeed 
+                                key={`mistake-${index}`}
+                                date={mistake.posting_date}
+                                mistakemade={mistake.mistake}
+                            />
+                        )}
+                    </main>
+                </div>
             </div>
+           
         )
     }
 }

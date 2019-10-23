@@ -1,6 +1,7 @@
 import React from 'react';
 import './Register.css';
 import config from '../../config';
+import Nav from '../Nav/Nav';
 
 export default class Register extends React.Component {
     constructor(props) {
@@ -43,56 +44,59 @@ export default class Register extends React.Component {
 
     render() {
         return (
-            <div className='registerContainer'>
-                <header>
-                    <h1>Register</h1>
-                </header>
-                <form className='registerForm' onSubmit={e => this.handleSubmit(e)}>
-                    <label htmlFor='username'>username</label>
-                    <input
-                        className='registerInput'
-                        required
-                        name='username'
-                        id='username'
-                        placeholder='Username'
-                        type='text'
-                        onChange={e => this.setState({username: e.target.value})}>
-                    </input>
-                    {this.state.password === this.state.verifyPassword ? <label htmlFor='password'>PASSWORD</label> : <label htmlFor='password'>password</label>}
-                    <input
-                        className='registerInput'
-                        required
-                        name='password'
-                        id='password'
-                        placeholder='Password'
-                        type='password'
-                        onChange={e => this.setState({password: e.target.value})}>
-                    </input>
-                    {this.state.password === this.state.verifyPassword ? <label htmlFor='verifyPassword'>VERIFY PASSWORD</label> : <label htmlFor='verifyPassword'>verify password</label>}
-                    <input
-                        className='registerInput'
-                        required
-                        name='verifyPassword'
-                        id='verifyPassword'
-                        placeholder='Verify Password'
-                        type='password'
-                        onChange={e => this.setState({verifyPassword: e.target.value})}>
-                    </input>
-                    {this.state.error === true ? <p>Passwords do NOT match!</p> : null}
-                    <label htmlFor='email'>email</label>
-                    <input
-                        className='registerInput'
-                        name='email'
-                        id='email'
-                        placeholder='Email'
-                        type='email'
-                        onChange={e => this.setState({email: e.target.value})}>
-                    </input>
-                    <button 
-                        className='registerButton' 
-                        type='submit'
-                    >submit</button>  
-                </form>
+            <div>
+                <Nav />
+                <div className='registerContainer'>
+                    <header>
+                        <h1>Register</h1>
+                    </header>
+                    <form className='registerForm' onSubmit={e => this.handleSubmit(e)}>
+                        <label htmlFor='username'>username</label>
+                        <input
+                            className='registerInput'
+                            required
+                            name='username'
+                            id='username'
+                            placeholder='Username'
+                            type='text'
+                            onChange={e => this.setState({username: e.target.value})}>
+                        </input>
+                        {this.state.password === this.state.verifyPassword ? <label htmlFor='password'>PASSWORD</label> : <label htmlFor='password'>password</label>}
+                        <input
+                            className='registerInput'
+                            required
+                            name='password'
+                            id='password'
+                            placeholder='Password'
+                            type='password'
+                            onChange={e => this.setState({password: e.target.value})}>
+                        </input>
+                        {this.state.password === this.state.verifyPassword ? <label htmlFor='verifyPassword'>VERIFY PASSWORD</label> : <label htmlFor='verifyPassword'>verify password</label>}
+                        <input
+                            className='registerInput'
+                            required
+                            name='verifyPassword'
+                            id='verifyPassword'
+                            placeholder='Verify Password'
+                            type='password'
+                            onChange={e => this.setState({verifyPassword: e.target.value})}>
+                        </input>
+                        {this.state.error === true ? <p>Passwords do NOT match!</p> : null}
+                        <label htmlFor='email'>email</label>
+                        <input
+                            className='registerInput'
+                            name='email'
+                            id='email'
+                            placeholder='Email'
+                            type='email'
+                            onChange={e => this.setState({email: e.target.value})}>
+                        </input>
+                        <button 
+                            className='registerButton' 
+                            type='submit'
+                        >submit</button>  
+                    </form>
+                </div>
             </div>
         )
     }

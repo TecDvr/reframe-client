@@ -1,6 +1,7 @@
 import React from 'react';
 import './MistakeThree.css'
 import ReframeContext from '../../../context/reframe-context';
+import Nav from '../../Nav/Nav';
 
 export default class Mistake extends React.Component {
     static contextType = ReframeContext;
@@ -12,6 +13,8 @@ export default class Mistake extends React.Component {
 
     render() {
         return (
+            <div>
+                <Nav />
                 <div className='mistakeContainer'>
                     <header>
                         <h1>Time to Reflect...</h1>
@@ -59,6 +62,7 @@ export default class Mistake extends React.Component {
                         </form>
                     </main>
                 </div>
+            </div>
         )
     }
 }

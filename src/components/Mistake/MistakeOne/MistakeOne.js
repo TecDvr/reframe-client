@@ -1,5 +1,6 @@
 import React from 'react';
 import './MistakeOne.css'
+import Nav from '../../Nav/Nav';
 
 export default class MistakeOne extends React.Component {
     handleYesClick(e) {
@@ -17,16 +18,19 @@ export default class MistakeOne extends React.Component {
     render() {
         return (
             <div>
-                <header>
-                    <h1>Mistake</h1>
-                </header>
-                <main>
-                    <h3>Did you make a mistake today?</h3>
-                    <div className='mistakeButtonCluster'>
-                        <button type='submit' onClick={(e) => this.handleYesClick(e)}>yes</button>
-                        <button type='submit' onClick={(e) => this.handleNoClick(e)}>no</button>
-                    </div>
-                </main>
+                <Nav />
+                <div>
+                    <header>
+                        <h1>Mistake</h1>
+                    </header>
+                    <main>
+                        <h3>Did you make a mistake today?</h3>
+                        <div className='mistakeButtonCluster'>
+                            <button type='submit' onClick={(e) => this.handleYesClick(e)}>yes</button>
+                            <button type='submit' onClick={(e) => this.handleNoClick(e)}>no</button>
+                        </div>
+                    </main>
+                </div>
             </div>
         )
     }

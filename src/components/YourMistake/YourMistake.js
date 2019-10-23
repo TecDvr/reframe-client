@@ -30,7 +30,7 @@ export default class YourMistake extends React.Component {
                         <div className='boxTitle'>
                             <button onClick={() => this.handleClick()}>close</button>
                             <h2>{this.props.nickname}</h2>
-                            <p>{this.props.date}</p>
+                            <p>{this.props.date.slice(0, 10)}</p>
                             {this.props.shared === true ? <p>This mistake is shared</p> : <p>You did not share this mistake</p>}
                         </div>
                         <div className='boxText'>
@@ -62,7 +62,7 @@ export default class YourMistake extends React.Component {
                         <div className='boxTitle'>
                             <button onClick={() => this.handleClick()}>open</button>
                             <h2>{this.props.nickname}</h2>
-                            <p>{this.props.date}</p>
+                            <p>{this.props.date.slice(0, 10)}</p>
                         </div>
                     </div> 
                 }

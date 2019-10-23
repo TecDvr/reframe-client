@@ -5,7 +5,6 @@ import './App.css';
 import Landing from '../Landing/Landing';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
-import Nav from '../Nav/Nav';
 import Explore from '../Explore/Explore';
 import UserHome from '../UserHome/UserHome';
 import MistakeOne from '../Mistake/MistakeOne/MistakeOne';
@@ -14,6 +13,7 @@ import MistakeThree from '../Mistake/MistakeThree/MistakeThree';
 import Plan from '../Plan/Plan';
 import Feed from '../Feed/Feed';
 import config from '../../config';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -61,7 +61,6 @@ export default class App extends React.Component {
     return (
       <ReframeContext.Provider value={this.state}>
         <div className='appContainer'>
-          <Nav />
 
           <Route 
             exact
@@ -87,37 +86,37 @@ export default class App extends React.Component {
             component={Explore}
           />
 
-          <Route
+          <PrivateRoute
             exact
             path='/user'
             component={UserHome}
           />
 
-          <Route
+          <PrivateRoute
             exact
             path='/mistake'
             component={MistakeOne}
           />
 
-          <Route
+          <PrivateRoute
             exact
             path='/mistaketwo'
             component={MistakeTwo}
           />  
 
-          <Route
+          <PrivateRoute
             exact
             path='/mistakeThree'
             component={MistakeThree}
           /> 
 
-          <Route
+          <PrivateRoute
             exact
             path='/plan'
             component={Plan}
           /> 
 
-          <Route
+          <PrivateRoute
             exact
             path='/feed'
             component={Feed}

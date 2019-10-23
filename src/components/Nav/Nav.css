@@ -1,20 +1,47 @@
+.navContainerMain {
+    min-height: 30px;
+    width: 100vw;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
 .navContainer {
-    min-height: 52px;
+    min-height: 30px;
+    width: 100vw;
     display: flex;
     flex-direction: row-reverse;
 }
 
 .menuOption {
     background-color: white;
-    margin:10px 10px 10px 10px;
+    margin:12px 20px 10px 1px;
     border-radius: 100%;
     height: 30px;
     width: 30px;    
     border: 1px solid black;
 }
 
-.bottom {
-    position: relative;
-    left: 52px;
-    bottom: 42px;
+.reframeLogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-left: 20px;
+}
+
+.menuLink {
+    display: flex;
+    flex-direction: row;
+}
+
+.feedLogo {
+    height: 20px;
+    margin-top: 5px;
+}
+
+.menuLogo {
+    height: 10px;
+    margin-top: 7px;
 }
