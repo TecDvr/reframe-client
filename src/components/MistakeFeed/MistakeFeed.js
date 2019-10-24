@@ -10,30 +10,20 @@ export default class MistakeFeed extends React.Component {
         super(props);
         this.state = {
             comment: '',
-            like: false,
-            dislike: false,
             mistake_id: 0
         }
     }
 
-    handleLike(e) {
-        e.preventDefault();
+    handleChange(e) {
         this.setState({
-            like: true
-        })
-    }
-
-    handleDislike(e) {
-        e.preventDefault();
-        this.setState({
-            dislike: true
+            comment: e.target.value,
+            mistake_id: this.props.id
         })
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        let mistake_id = window.localStorage.getItem('mistake_id');
-        fetch(`${config.API_ENDPOINT}/mistake/${mistake_id}`, {
+        fetch(`${config.API_ENDPOINT}/comment/${this.state.mistake_id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -43,7 +33,7 @@ export default class MistakeFeed extends React.Component {
         })
         .then(res =>
                 res.json().then(user => {
-                this.props.history.push('/user')
+                console.log(user)
                 })   
         )
     }
@@ -57,11 +47,7 @@ export default class MistakeFeed extends React.Component {
                     <div className='boxText'>
                         <p>{this.props.mistakemade}</p>
                     </div>
-                    <div className='boxLike'>
-                        <button className='likeButton' onClick={(e) => this.handleLike(e)}>Like</button>
-                        <button className='dislikeButton' onClick={(e) => this.handleDislike(e)}>Dislike</button>
-                    </div>
-                    <form>
+                    <form onSubmit={(e) => this.handleSubmit(e)}>
                         <label htmlFor='boxComment'>comment</label>
                         <input
                             className='boxComment'
@@ -69,7 +55,7 @@ export default class MistakeFeed extends React.Component {
                             name='boxComment'
                             id='boxComment'
                             placeholder='comment...'
-                            onChange={e => this.setState({comment: e.target.value})}>
+                            onChange={e => this.handleChange(e)}>
                         </input>
                         <button className='boxCommentButton' type='submit'>submit</button>
                     </form> 

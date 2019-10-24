@@ -39,7 +39,6 @@ export default class App extends React.Component {
       storeMistakes : (key, value) => {
         let newMistake = this.state.mistakeData;
         newMistake[key] = value;
-
         this.setState({ mistakeData: newMistake})
       }
     }
@@ -129,3 +128,9 @@ export default class App extends React.Component {
   }
 }
 
+//BUGGY SHIZZ
+  //user home does not load submitted mistake
+  //nav menu spacing, icons
+
+//VERSION TWO
+  //full demo by click of button

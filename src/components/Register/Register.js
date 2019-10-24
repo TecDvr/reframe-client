@@ -69,7 +69,7 @@ export default class Register extends React.Component {
                             id='password'
                             placeholder='Password'
                             type='password'
-                            onChange={e => this.setState({password: e.target.value})}>
+                            onChange={e => this.setState({user_password: e.target.value})}>
                         </input>
                         {this.state.password === this.state.verifyPassword ? <label htmlFor='verifyPassword'>VERIFY PASSWORD</label> : <label htmlFor='verifyPassword'>verify password</label>}
                         <input

@@ -19,9 +19,9 @@ export default class Plan extends React.Component {
             body: JSON.stringify(this.context.mistakeData)
         })
         .then(res =>
-                res.json().then(user => {
-                this.props.history.push('/user')
-                })   
+            res.json().then(user => {
+            this.props.history.push('/user')
+            })   
         )
     }
 

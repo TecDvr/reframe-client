@@ -5,13 +5,11 @@ import Nav from '../../Nav/Nav';
 export default class MistakeOne extends React.Component {
     handleYesClick(e) {
         e.preventDefault();
-        console.log('yes');
         this.props.history.push('/mistaketwo');
     }
 
     handleNoClick(e) {
         e.preventDefault();
-        console.log('no');
         this.props.history.push('/user');
     }
 

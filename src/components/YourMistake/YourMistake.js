@@ -1,20 +1,55 @@
 import React from 'react';
 import './YourMistake.css';
-import ReframeContext from '../../context/reframe-context'
+import ReframeContext from '../../context/reframe-context';
+import config from '../../config';
 
 export default class YourMistake extends React.Component {
     static contextType = ReframeContext;
+
     constructor(props) {
         super(props);
         this.state = {
-            boxOpen: true
+            boxOpen: true,
+            comment: '',
+            plan_one_check: null,
+            plan_two_check: null,
+            plan_three_check: null,
+            plan_four_check: null,
+            plan_five_check: null
         }
+    }
+
+    componentDidMount() {
+        fetch(`${config.API_ENDPOINT}/comment/${this.props.id}`, {
+            method: 'GET',
+            })
+            .then(res => res.json())
+            .then(resJSON => {
+                this.setState({
+                    comment: resJSON,
+                }, () => {
+                    console.log(this.state.comment)
+                    console.log(this.props.id)
+                })
+            })
     }
 
     handleClick() {
         this.setState({
             boxOpen: !this.state.boxOpen
         })
+        // fetch(`${config.API_ENDPOINT}/plancheck/${this.props.id}`, {
+        //     method: 'PATCH',
+        //   })
+        //   .then(res => res.json())
+        //   .then(resJSON => {
+        //     this.setState({
+        //       comment: resJSON
+        //     }, () => {
+        //         console.log(this.state.comment)
+        //         console.log(this.props.id)
+        //     })
+        //   })
     }
 
     handleDelete() {
@@ -48,13 +83,42 @@ export default class YourMistake extends React.Component {
                         <div>
                             <h2>Your Plan</h2>
                             <ul>
-                                <li>{this.props.planone}<input type='checkbox'></input></li>
-                                <li>{this.props.plantwo}<input type='checkbox'></input></li>
-                                <li>{this.props.planthree}<input type='checkbox'></input></li>
-                                <li>{this.props.planfour}<input type='checkbox'></input></li>
-                                <li>{this.props.planfive}<input type='checkbox'></input></li>
+                                <li onChange={e=>this.setState({plan_one_check: !this.state.plan_one_check})}>
+                                    {this.props.planone}
+                                    <input
+                                        type='checkbox'>
+                                    </input>
+                                </li>
+                                <li onChange={e=>this.setState({plan_two_check: !this.state.plan_two_check})}>
+                                    {this.props.plantwo}
+                                    <input 
+                                        type='checkbox'>                                           
+                                    </input>
+                                </li>
+                                <li onChange={e=>this.setState({plan_three_check: !this.state.plan_three_check})}>
+                                    {this.props.planthree}
+                                    <input 
+                                        type='checkbox'>
+                                    </input>
+                                </li>
+                                <li onChange={e=>this.setState({plan_four_check: !this.state.plan_four_check})}>
+                                    {this.props.planfour}
+                                    <input 
+                                        type='checkbox'>
+                                    </input>
+                                </li>
+                                <li onChange={e=>this.setState({plan_five_check: !this.state.plan_five_check})}>
+                                    {this.props.planfive}
+                                    <input 
+                                        type='checkbox'>
+                                    </input>
+                                </li>
                             </ul>
                         </div>
+                        <div>
+                            <h2>Comments</h2>
+                            {this.state.comment.map((comments, index) => <p key={index}>{comments.comment}</p>)}
+                        </div>    
                         <button className='deleteButton' type='button' onClick={() => this.handleDelete()}>delete mistake</button>
                     </div> 
                     : 

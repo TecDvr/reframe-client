@@ -3,8 +3,6 @@ import YourMistake from '../YourMistake/YourMistake';
 import ReframeContext from '../../context/reframe-context';
 import Nav from '../Nav/Nav';
 
-let userID = window.localStorage.getItem('userID')
-
 export default class UserHome extends React.Component {
     static contextType = ReframeContext;
 
@@ -25,7 +23,7 @@ export default class UserHome extends React.Component {
                         <div>
                             {this.context.mistake.filter(mistake => 
                             // eslint-disable-next-line
-                            mistake.user_id == userID).map((mistake, index) => 
+                            mistake.user_id == window.localStorage.getItem('userID')).map((mistake, index) => 
                                 <YourMistake 
                                     key={`mistake-${index}`}
                                     nickname={mistake.mistake_nickname}
@@ -38,6 +36,7 @@ export default class UserHome extends React.Component {
                                     planfour={mistake.plan_four}
                                     planfive={mistake.plan_five}
                                     thoughts={mistake}
+                                    id={mistake.id}
                                 />
                             )}
                         </div>

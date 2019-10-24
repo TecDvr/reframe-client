@@ -21,6 +21,7 @@ export default class Feed extends React.Component {
                                 key={`mistake-${index}`}
                                 date={mistake.posting_date}
                                 mistakemade={mistake.mistake}
+                                id={mistake.id}
                             />
                         )}
                     </main>
