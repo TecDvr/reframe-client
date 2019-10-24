@@ -11,8 +11,8 @@ export default class YourMistake extends React.Component {
         this.state = {
             boxOpen: true,
             comment: '',
-            plan_one_check: null,
-            plan_two_check: null,
+            plan_one_check: false,
+            plan_two_check: false,
             plan_three_check: null,
             plan_four_check: null,
             plan_five_check: null
@@ -83,35 +83,25 @@ export default class YourMistake extends React.Component {
                         <div>
                             <h2>Your Plan</h2>
                             <ul>
-                                <li onChange={e=>this.setState({plan_one_check: !this.state.plan_one_check})}>
-                                    {this.props.planone}
-                                    <input
-                                        type='checkbox'>
-                                    </input>
+                                <li className='lineItem' onClick={e=>this.setState({plan_one_check: !this.state.plan_one_check})}>
+                                    <p className='planText'>{this.props.planone}</p>
+                                    {this.state.plan_one_check === false ? <div className='box'></div> :<div className='boxChecked'></div>}
                                 </li>
-                                <li onChange={e=>this.setState({plan_two_check: !this.state.plan_two_check})}>
-                                    {this.props.plantwo}
-                                    <input 
-                                        type='checkbox'>                                           
-                                    </input>
+                                <li onClick={e=>this.setState({plan_two_check: !this.state.plan_two_check})}>
+                                    <p className='planText'>{this.props.plantwo}</p>
+                                    {this.state.plan_two_check === false ? <div className='box'></div> :<div className='boxChecked'></div>}
                                 </li>
-                                <li onChange={e=>this.setState({plan_three_check: !this.state.plan_three_check})}>
-                                    {this.props.planthree}
-                                    <input 
-                                        type='checkbox'>
-                                    </input>
+                                <li onClick={e=>this.setState({plan_three_check: !this.state.plan_three_check})}>
+                                    <p className='planText'>{this.props.planthree}</p>
+                                    {this.state.plan_three_check === false ? <div className='box'></div> :<div className='boxChecked'></div>}
                                 </li>
-                                <li onChange={e=>this.setState({plan_four_check: !this.state.plan_four_check})}>
-                                    {this.props.planfour}
-                                    <input 
-                                        type='checkbox'>
-                                    </input>
+                                <li onClick={e=>this.setState({plan_four_check: !this.state.plan_four_check})}>
+                                    <p className='planText'>{this.props.planfour}</p>
+                                    {this.state.plan_four_check === false ? <div className='box'></div> :<div className='boxChecked'></div>}
                                 </li>
-                                <li onChange={e=>this.setState({plan_five_check: !this.state.plan_five_check})}>
-                                    {this.props.planfive}
-                                    <input 
-                                        type='checkbox'>
-                                    </input>
+                                <li onClick={e=>this.setState({plan_five_check: !this.state.plan_five_check})}>
+                                    <p className='planText'>{this.props.planfive}</p>
+                                    {this.state.plan_five_check === false ? <div className='box'></div> :<div className='boxChecked'></div>} 
                                 </li>
                             </ul>
                         </div>
