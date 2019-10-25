@@ -13,47 +13,56 @@ export default class YourMistake extends React.Component {
             comment: '',
             plan_one_check: false,
             plan_two_check: false,
-            plan_three_check: null,
-            plan_four_check: null,
-            plan_five_check: null
+            plan_three_check: false,
+            plan_four_check: false,
+            plan_five_check: false
         }
     }
 
     componentDidMount() {
-        fetch(`${config.API_ENDPOINT}/comment/${this.props.id}`, {
-            method: 'GET',
+        Promise.all([
+            fetch(`${config.API_ENDPOINT}/comment/${this.props.id}`, {
+                method: 'GET',
+            }),
+            fetch(`${config.API_ENDPOINT}/checkbox/${this.props.id}`, {
+                method: 'GET',
+            }),
+        ])
+        .then(([comment, checkbox]) => {
+            return Promise.all([comment.json(), checkbox.json()])
+        })
+        .then(([comments, checkboxs]) => {
+            console.log(checkboxs, 'test')
+            this.setState({
+                comment: comments,
+                plan_one_check: checkboxs[0].plan_one_check,
+                plan_two_check: checkboxs[0].plan_two_check,
+                plan_three_check: checkboxs[0].plan_three_check,
+                plan_four_check: checkboxs[0].plan_four_check,
+                plan_five_check: checkboxs[0].plan_five_check
+            }, () => {
+                console.log(this.state)
             })
-            .then(res => res.json())
-            .then(resJSON => {
-                this.setState({
-                    comment: resJSON,
-                }, () => {
-                    console.log(this.state.comment)
-                    console.log(this.props.id)
-                })
-            })
+        })
     }
 
     handleClick() {
         this.setState({
             boxOpen: !this.state.boxOpen
         })
-        // fetch(`${config.API_ENDPOINT}/plancheck/${this.props.id}`, {
-        //     method: 'PATCH',
-        //   })
-        //   .then(res => res.json())
-        //   .then(resJSON => {
-        //     this.setState({
-        //       comment: resJSON
-        //     }, () => {
-        //         console.log(this.state.comment)
-        //         console.log(this.props.id)
-        //     })
-        //   })
     }
 
-    handleDelete() {
-        console.log('deleted');
+    handleBoxCheck() {
+        fetch(`${config.API_ENDPOINT}/plancheck/${this.props.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state)
+            })
+            .then(res => {
+                console.log('works')
+            })
     }
 
     render() {
@@ -65,43 +74,45 @@ export default class YourMistake extends React.Component {
                         <div className='boxTitle'>
                             <button onClick={() => this.handleClick()}>close</button>
                             <h2>{this.props.nickname}</h2>
-                            <p>{this.props.date.slice(0, 10)}</p>
+                            <p>Mistake was made on: {this.props.date.slice(0, 10)}</p>
                             {this.props.shared === true ? <p>This mistake is shared</p> : <p>You did not share this mistake</p>}
                         </div>
                         <div className='boxText'>
-                            <p>{this.props.mistakemade}</p>
+                            <h3>{this.props.mistakemade}</h3>
                         </div>
                         <div>
-                            <h2>Your Thoughts</h2>
+                            <h2>My Thoughts</h2>
                             <ul>
-                                <li>{this.props.thoughts.went_wrong}</li>
-                                <li>{this.props.thoughts.why_wrong}</li>
-                                <li>{this.props.thoughts.what_doing}</li>
-                                <li>{this.props.thoughts.what_learn}</li>
+                                <li className='lineItem'>- {this.props.thoughts.went_wrong}</li>
+                                <li className='lineItem'>- {this.props.thoughts.why_wrong}</li>
+                                <li className='lineItem'>- {this.props.thoughts.what_doing}</li>
+                                <li className='lineItem'>- {this.props.thoughts.what_learn}</li>
                             </ul>
                         </div>
                         <div>
-                            <h2>Your Plan</h2>
+                            <h2>My Plan</h2>
                             <ul>
-                                <li className='lineItem' onClick={e=>this.setState({plan_one_check: !this.state.plan_one_check})}>
-                                    <p className='planText'>{this.props.planone}</p>
-                                    {this.state.plan_one_check === false ? <div className='box'></div> :<div className='boxChecked'></div>}
+                                <li className='lineItem' onClick={e=>this.setState({plan_one_check: !this.state.plan_one_check}, () => {this.handleBoxCheck()})}>
+                                    <p className='plainText'>{this.props.planone}</p>
+                                    {this.state.plan_one_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
                                 </li>
-                                <li onClick={e=>this.setState({plan_two_check: !this.state.plan_two_check})}>
-                                    <p className='planText'>{this.props.plantwo}</p>
-                                    {this.state.plan_two_check === false ? <div className='box'></div> :<div className='boxChecked'></div>}
+                                <li className='lineItem' onClick={e=>this.setState({plan_two_check: !this.state.plan_two_check}, () => {this.handleBoxCheck()})}>
+                                    <p className='plainText'>{this.props.plantwo}</p>
+                                    {this.state.plan_two_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
                                 </li>
-                                <li onClick={e=>this.setState({plan_three_check: !this.state.plan_three_check})}>
-                                    <p className='planText'>{this.props.planthree}</p>
-                                    {this.state.plan_three_check === false ? <div className='box'></div> :<div className='boxChecked'></div>}
+                                <li className='lineItem' onClick={e=>this.setState({plan_three_check: !this.state.plan_three_check}, () => {this.handleBoxCheck()})}>
+                                    <p className='plainText'>{this.props.planthree}</p>
+                                    {this.state.plan_three_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
                                 </li>
-                                <li onClick={e=>this.setState({plan_four_check: !this.state.plan_four_check})}>
-                                    <p className='planText'>{this.props.planfour}</p>
-                                    {this.state.plan_four_check === false ? <div className='box'></div> :<div className='boxChecked'></div>}
+                                <li className='lineItem' onClick={e=>this.setState({plan_four_check: !this.state.plan_four_check}, () => {this.handleBoxCheck()})}>
+                                    <p className='plainText'>{this.props.planfour}</p>
+                                    {this.state.plan_four_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
                                 </li>
-                                <li onClick={e=>this.setState({plan_five_check: !this.state.plan_five_check})}>
-                                    <p className='planText'>{this.props.planfive}</p>
-                                    {this.state.plan_five_check === false ? <div className='box'></div> :<div className='boxChecked'></div>} 
+                                <li 
+                                    className='lineItem' 
+                                    onClick={e=> this.setState({plan_five_check: !this.state.plan_five_check}, () => {this.handleBoxCheck()})}>
+                                    <p className='plainText'>{this.props.planfive}</p>
+                                    {this.state.plan_five_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>} 
                                 </li>
                             </ul>
                         </div>
@@ -109,7 +120,6 @@ export default class YourMistake extends React.Component {
                             <h2>Comments</h2>
                             {this.state.comment.map((comments, index) => <p key={index}>{comments.comment}</p>)}
                         </div>    
-                        <button className='deleteButton' type='button' onClick={() => this.handleDelete()}>delete mistake</button>
                     </div> 
                     : 
                     <div>

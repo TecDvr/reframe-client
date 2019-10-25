@@ -2,6 +2,7 @@ import React from 'react';
 import YourMistake from '../YourMistake/YourMistake';
 import ReframeContext from '../../context/reframe-context';
 import Nav from '../Nav/Nav';
+import './UserHome.css';
 
 export default class UserHome extends React.Component {
     static contextType = ReframeContext;
@@ -16,11 +17,16 @@ export default class UserHome extends React.Component {
                     </header>
                     <main>
                         <div>
-                            <p>Your mistakes are: NOT SO BAD</p>
-                            <p>You have made 8 mistakes</p>
-                            <p>You have gone 4 days without a mistake</p>
+                            <h2>mis·take</h2>
+                            <p>/məˈstāk/</p>
+                            <h3>noun</h3>
+                            <p>an action or judgment that is misguided or wrong.</p>
+                            <p>"coming here was a mistake"</p>
+                            <h3>verb</h3>
+                            <p>be wrong about.</p>
+                            <p>"because I was inexperienced I mistook the nature of our relationship"</p>
                         </div>
-                        <div>
+                        <div className='mistakeMap'>
                             {this.context.mistake.filter(mistake => 
                             // eslint-disable-next-line
                             mistake.user_id == window.localStorage.getItem('userID')).map((mistake, index) => 
