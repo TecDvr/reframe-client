@@ -1,11 +1,30 @@
 import React from 'react';
 import YourMistake from '../YourMistake/YourMistake';
-import ReframeContext from '../../context/reframe-context';
 import Nav from '../Nav/Nav';
+import config from '../../config';
 import './UserHome.css';
 
 export default class UserHome extends React.Component {
-    static contextType = ReframeContext;
+    constructor(props) {
+        super(props);
+        this.state = {
+            mistake: []
+        }
+    }
+
+    componentDidMount() {
+        fetch(`${config.API_ENDPOINT}/mistake`, {
+            method: 'GET'
+          })
+          .then(res => res.json())
+          .then(resJSON => {
+            this.setState({
+              mistake: resJSON
+            }, () => {
+                console.log(this.state.mistake, 'test')
+            })
+          })
+    }
 
     render() {
         return (
@@ -27,9 +46,9 @@ export default class UserHome extends React.Component {
                             <p>"because I was inexperienced I mistook the nature of our relationship"</p>
                         </div>
                         <div className='mistakeMap'>
-                            {this.context.mistake.filter(mistake => 
+                            {this.state.mistake.filter(mistake => 
                             // eslint-disable-next-line
-                            mistake.user_id == window.localStorage.getItem('userID')).map((mistake, index) => 
+                            mistake.user_id == window.localStorage.getItem('userID')).sort((a, b) => b.id - a.id).map((mistake, index) => 
                                 <YourMistake 
                                     key={`mistake-${index}`}
                                     nickname={mistake.mistake_nickname}

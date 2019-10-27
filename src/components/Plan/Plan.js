@@ -22,7 +22,7 @@ export default class Plan extends React.Component {
             res.json().then(mistake => {
             console.log(mistake)
             this.props.history.push('/user')
-            })   
+            })
         )
     }
 

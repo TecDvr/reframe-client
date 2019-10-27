@@ -15,10 +15,6 @@
     padding-bottom: 20px;
 }
 
-.deleteButton {
-    background-color: white;
-}
-
 .box {
     background-color: white;
     height: 20px;
@@ -44,4 +40,10 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 10px;
+}
+
+.commentText {
+    text-align: left !important;
+    padding: 0px 20px 20px 20px
+    
 }

@@ -32,7 +32,6 @@ export default class YourMistake extends React.Component {
             return Promise.all([comment.json(), checkbox.json()])
         })
         .then(([comments, checkboxs]) => {
-            console.log(checkboxs, 'test')
             this.setState({
                 comment: comments,
                 plan_one_check: checkboxs[0].plan_one_check,
@@ -40,8 +39,6 @@ export default class YourMistake extends React.Component {
                 plan_three_check: checkboxs[0].plan_three_check,
                 plan_four_check: checkboxs[0].plan_four_check,
                 plan_five_check: checkboxs[0].plan_five_check
-            }, () => {
-                console.log(this.state)
             })
         })
     }
@@ -118,7 +115,7 @@ export default class YourMistake extends React.Component {
                         </div>
                         <div>
                             <h2>Comments</h2>
-                            {this.state.comment.map((comments, index) => <p key={index}>{comments.comment}</p>)}
+                            {this.state.comment.map((comments, index) => <p className='commentText' key={index}>{comments.comment}</p>)}
                         </div>    
                     </div> 
                     : 
