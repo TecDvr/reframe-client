@@ -62,6 +62,16 @@ export default class YourMistake extends React.Component {
             })
     }
 
+    handleDelete(e) {
+        e.preventDefault();
+        fetch(`${config.API_ENDPOINT}/delete/${this.props.id}`, {
+            method: 'DELETE'
+            })
+            .then(res => {
+                
+            })
+    }
+
     render() {
         return (
             <div className='yourMistakeContainer'>
@@ -117,7 +127,12 @@ export default class YourMistake extends React.Component {
                         <div>
                             <h2>Comments</h2>
                             {this.state.comment.map((comments, index) => <p className='commentText' key={index}>{comments.comment}</p>)}
-                        </div>    
+                        </div>
+                        <button 
+                            className='deleteButton'
+                            onClick={(e) => this.handleDelete(e)}
+                            >Delete Mistake   
+                        </button>    
                     </div> 
                     : 
                     <div>
