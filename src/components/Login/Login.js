@@ -53,7 +53,7 @@ export default class Login extends React.Component {
                             id='username'
                             placeholder='Username'
                             type='text'
-                            onChange={e => this.setState({username: e.target.value})}>
+                            onChange={e => this.setState({username: e.target.value.trim()})}>
                         </input>
                         <label htmlFor='password'>password</label>
                         <input
@@ -63,7 +63,7 @@ export default class Login extends React.Component {
                             id='password'
                             placeholder='Password'
                             type='password'
-                            onChange={e => this.setState({user_password: e.target.value})}>
+                            onChange={e => this.setState({user_password: e.target.value.trim()})}>
                         </input>
                         {this.state.error ? <p className="error">{this.state.error}</p> : <div className='demo'>
                                 <p>DEMO THIS APP</p>

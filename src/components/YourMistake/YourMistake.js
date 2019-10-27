@@ -71,6 +71,7 @@ export default class YourMistake extends React.Component {
                         <div className='boxTitle'>
                             <button onClick={() => this.handleClick()}>close</button>
                             <h2>{this.props.nickname}</h2>
+                            <h3>This mistake was: {this.props.bad === 1 ? <p>Not that bad</p> : this.props.bad === 2 ? <p>Kinda bad</p> : this.props.bad === 3 ? <p>Pretty bad</p> : <p>Really bad</p>}</h3>
                             <p>Mistake was made on: {this.props.date.slice(0, 10)}</p>
                             {this.props.shared === true ? <p>This mistake is shared</p> : <p>You did not share this mistake</p>}
                         </div>
@@ -91,25 +92,25 @@ export default class YourMistake extends React.Component {
                             <ul>
                                 <li className='lineItem' onClick={e=>this.setState({plan_one_check: !this.state.plan_one_check}, () => {this.handleBoxCheck()})}>
                                     <p className='plainText'>{this.props.planone}</p>
-                                    {this.state.plan_one_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
+                                    {this.state.plan_one_check === null || this.state.plan_one_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
                                 </li>
                                 <li className='lineItem' onClick={e=>this.setState({plan_two_check: !this.state.plan_two_check}, () => {this.handleBoxCheck()})}>
                                     <p className='plainText'>{this.props.plantwo}</p>
-                                    {this.state.plan_two_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
+                                    {this.state.plan_two_check === null || this.state.plan_two_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
                                 </li>
                                 <li className='lineItem' onClick={e=>this.setState({plan_three_check: !this.state.plan_three_check}, () => {this.handleBoxCheck()})}>
                                     <p className='plainText'>{this.props.planthree}</p>
-                                    {this.state.plan_three_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
+                                    {this.state.plan_three_check === null || this.state.plan_three_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
                                 </li>
                                 <li className='lineItem' onClick={e=>this.setState({plan_four_check: !this.state.plan_four_check}, () => {this.handleBoxCheck()})}>
                                     <p className='plainText'>{this.props.planfour}</p>
-                                    {this.state.plan_four_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
+                                    {this.state.plan_four_check === null || this.state.plan_four_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>}
                                 </li>
                                 <li 
                                     className='lineItem' 
                                     onClick={e=> this.setState({plan_five_check: !this.state.plan_five_check}, () => {this.handleBoxCheck()})}>
                                     <p className='plainText'>{this.props.planfive}</p>
-                                    {this.state.plan_five_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>} 
+                                    {this.state.plan_five_check === null || this.state.plan_five_check === false ? <div className='box'></div> :<div className='boxChecked'>X</div>} 
                                 </li>
                             </ul>
                         </div>

@@ -24,9 +24,10 @@ export default class Register extends React.Component {
             body: JSON.stringify(this.state)
         })
         .then(res => 
-            res.json().then(user => 
+            res.json().then(user => {
                 this.props.history.push('/user')
-            )
+                console.log(this.state)
+            })
         )
     }
 
@@ -59,7 +60,7 @@ export default class Register extends React.Component {
                             id='username'
                             placeholder='Username'
                             type='text'
-                            onChange={e => this.setState({username: e.target.value})}>
+                            onChange={e => this.setState({username: e.target.value.trim()})}>
                         </input>
                         {this.state.password === this.state.verifyPassword ? <label htmlFor='password'>PASSWORD</label> : <label htmlFor='password'>password</label>}
                         <input
@@ -69,7 +70,7 @@ export default class Register extends React.Component {
                             id='password'
                             placeholder='Password'
                             type='password'
-                            onChange={e => this.setState({user_password: e.target.value})}>
+                            onChange={e => this.setState({user_password: e.target.value.trim()})}>
                         </input>
                         {this.state.password === this.state.verifyPassword ? <label htmlFor='verifyPassword'>VERIFY PASSWORD</label> : <label htmlFor='verifyPassword'>verify password</label>}
                         <input
@@ -79,7 +80,7 @@ export default class Register extends React.Component {
                             id='verifyPassword'
                             placeholder='Verify Password'
                             type='password'
-                            onChange={e => this.setState({verifyPassword: e.target.value})}>
+                            onChange={e => this.setState({verifyPassword: e.target.value.trim()})}>
                         </input>
                         {this.state.error === true ? <p>Passwords do NOT match!</p> : null}
                         <label htmlFor='email'>email</label>
@@ -89,7 +90,7 @@ export default class Register extends React.Component {
                             id='email'
                             placeholder='Email'
                             type='email'
-                            onChange={e => this.setState({email: e.target.value})}>
+                            onChange={e => this.setState({email: e.target.value.trim()})}>
                         </input>
                         <button 
                             className='registerButton' 

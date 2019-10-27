@@ -1,10 +1,27 @@
 import React from 'react';
 import MistakeFeed from '../MistakeFeed/MistakeFeed';
-import ReframeContext from '../../context/reframe-context';
 import Nav from '../Nav/Nav';
+import config from '../../config';
 
 export default class Feed extends React.Component {
-    static contextType = ReframeContext;
+    constructor(props) {
+        super(props);
+        this.state = {
+            mistake: []
+        }
+    }
+
+    componentDidMount() {
+        fetch(`${config.API_ENDPOINT}/mistake`, {
+            method: 'GET'
+          })
+          .then(res => res.json())
+          .then(resJSON => {
+            this.setState({
+              mistake: resJSON
+            })
+          })
+    }
     
     render() {
         return (
@@ -16,7 +33,7 @@ export default class Feed extends React.Component {
                         <p>tell the world what you did and be free</p>
                     </header>
                     <main>
-                        {this.context.mistake.map((mistake, index) => 
+                        {this.state.mistake.sort((a, b) => b.id - a.id).map((mistake, index) => 
                             <MistakeFeed 
                                 key={`mistake-${index}`}
                                 date={mistake.posting_date}

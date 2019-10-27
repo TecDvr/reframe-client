@@ -62,6 +62,7 @@ export default class UserHome extends React.Component {
                                     planfive={mistake.plan_five}
                                     thoughts={mistake}
                                     id={mistake.id}
+                                    bad={mistake.how_bad}
                                 />
                             )}
                         </div>

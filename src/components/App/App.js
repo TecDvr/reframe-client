@@ -12,7 +12,7 @@ import MistakeTwo from '../Mistake/MistakeTwo/MistakeTwo';
 import MistakeThree from '../Mistake/MistakeThree/MistakeThree';
 import Plan from '../Plan/Plan';
 import Feed from '../Feed/Feed';
-import config from '../../config';
+//import config from '../../config';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 export default class App extends React.Component {
@@ -44,17 +44,17 @@ export default class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    fetch(`${config.API_ENDPOINT}/mistake`, {
-      method: 'GET'
-    })
-    .then(res => res.json())
-    .then(resJSON => {
-      this.setState({
-        mistake: resJSON
-      })
-    })
-  }
+  // componentDidMount() {
+  //   fetch(`${config.API_ENDPOINT}/mistake`, {
+  //     method: 'GET'
+  //   })
+  //   .then(res => res.json())
+  //   .then(resJSON => {
+  //     this.setState({
+  //       mistake: resJSON
+  //     })
+  //   })
+  // }
 
   render() {
     return (
@@ -129,7 +129,6 @@ export default class App extends React.Component {
 }
 
 //BUGGY SHIZZ
-  //user home does not load submitted mistake
   //nav menu spacing, icons
 
 //VERSION TWO
