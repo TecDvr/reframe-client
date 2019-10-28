@@ -49,7 +49,8 @@ export default class Register extends React.Component {
                 <Nav />
                 <div className='registerContainer'>
                     <header>
-                        <h1>Register</h1>
+                        <h1>register
+                        </h1>
                     </header>
                     <form className='registerForm' onSubmit={e => this.handleSubmit(e)}>
                         <label htmlFor='username'>username</label>

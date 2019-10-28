@@ -2,6 +2,7 @@ import React from 'react';
 import './Login.css';
 import config from '../../config';
 import Nav from '../Nav/Nav';
+import { Link } from 'react-router-dom'
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -42,7 +43,7 @@ export default class Login extends React.Component {
                 <Nav />
                 <div className='loginContainer'>
                     <header>
-                        <h1>Login Test</h1>
+                        <h1>login</h1>
                     </header>
                     <form className='loginForm' onSubmit={e => this.handleSubmit(e)}>
                         <label htmlFor='username'>username</label>
@@ -71,6 +72,12 @@ export default class Login extends React.Component {
                                 <p>password: demoPassword</p>
                             </div>
                         }
+                        <Link
+                            
+                            style={{ textDecoration: 'none' }} 
+                            to='/register'>
+                                <p className='registerLoginLink'>register</p>
+                        </Link>
                         <button className='loginButton' type='submit'>submit</button>
                     </form>
                 </div>

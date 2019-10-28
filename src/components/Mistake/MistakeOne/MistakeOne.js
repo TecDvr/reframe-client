@@ -18,14 +18,16 @@ export default class MistakeOne extends React.Component {
             <div>
                 <Nav />
                 <div>
-                    <header>
-                        <h1>Mistake</h1>
-                    </header>
+              
                     <main>
                         <h3>Did you make a mistake today?</h3>
                         <div className='mistakeButtonCluster'>
-                            <button type='submit' onClick={(e) => this.handleYesClick(e)}>yes</button>
-                            <button type='submit' onClick={(e) => this.handleNoClick(e)}>no</button>
+                            <button
+                            className='mistakeButton'
+                            type='submit' onClick={(e) => this.handleYesClick(e)}>yes</button>
+                            <button 
+                            className='mistakeButton'
+                            type='submit' onClick={(e) => this.handleNoClick(e)}>no</button>
                         </div>
                     </main>
                 </div>

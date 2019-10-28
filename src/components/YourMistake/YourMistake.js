@@ -1,9 +1,10 @@
 import React from 'react';
 import './YourMistake.css';
+import { withRouter } from 'react-router-dom';
 import ReframeContext from '../../context/reframe-context';
 import config from '../../config';
 
-export default class YourMistake extends React.Component {
+class YourMistake extends React.Component {
     static contextType = ReframeContext;
 
     constructor(props) {
@@ -147,3 +148,5 @@ export default class YourMistake extends React.Component {
         )
     }
 }
+
+export default withRouter(YourMistake);

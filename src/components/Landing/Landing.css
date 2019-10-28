@@ -7,21 +7,68 @@
     font-size: calc(10px + 2vmin);
 }
 
-/* buttons will have diff styles */
-.exploreLinkButton {
-  background-color: grey;
+.linkButton {
+  background-color: rgba(255, 255, 255, 0.3);
   color: white;
-  height: 30px;
-  width: 50px;
+  height: 50px;
+  width: 100px;
   border-radius: 10px;
-  margin: 10px;
+  margin: 20vh 2vw 1vh 2vw;
+  animation: fadeInButton ease 9s;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 20px;
 }
 
-.loginButton {
-  background-color: grey;
-  color: white;
-  height: 30px;
-  width: 50px;
+@keyframes fadeInButton{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.title {
+  font-size: 60px;
+  margin-top: 20vh;
+  animation: fadeInTitle ease 3s;
+}
+
+@keyframes fadeInTitle{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.tagLine {
+  font-size: 20px;;
+  animation: fadeInTag ease 7s;
+}
+
+@keyframes fadeInTag{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.logo {
+  height: 27px;
+  width: 27px;
+  display: inline-block;
+  border: 2px solid white;
   border-radius: 10px;
-  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-right: 10px;
+}
+
+.registerLink {
+  color: white;
+  opacity: 0.7;
+  margin-bottom: 10vh;
 }

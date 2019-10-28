@@ -1,3 +1,32 @@
-.appContainer {
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Source+Code+Pro:300&display=swap');
+
+/* font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Source Code Pro', monospace; */
+
+body {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Exo", sans-serif;
+  color: #fff;
+  background: linear-gradient(-45deg, #16003B, #41003B, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: 'Source Code Pro', monospace;
+}
+
+@keyframes gradientBG {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }

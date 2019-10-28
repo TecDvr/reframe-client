@@ -1,0 +1,26 @@
+main {
+    margin: 15vh 0vh 0vh 0vh;
+    animation: fadeInTitle ease 2s;
+}
+
+@keyframes fadeInTitle{
+    0% {
+      opacity:0;
+      left:60vw;
+    }
+    100% {
+      opacity:1;
+      left:0px;
+    }
+  }
+
+.mistakeButton {
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    margin: 6vh 3vh 5vh 3vh;
+    font-family: 'Source Code Pro', monospace;
+}

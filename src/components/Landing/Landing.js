@@ -3,26 +3,33 @@ import { Link } from 'react-router-dom';
 import './Landing.css';
 import Nav from '../Nav/Nav';
 
+//add css webkits
+
 export default class Landing extends React.Component {
     render() {
         return (
             <div>
-                <Nav />
                 <div className='landingContainer'>
                     <header>
-                        <h1>reframe</h1>
-                        <p>reframe your mistakes</p>
+                        <h1 className='title'><div className='logo'></div>reframe</h1>
+                        <p className='tagLine'>reframe your mistakes</p>
                     </header>
                     <main>
                         <Link 
                             style={{ textDecoration: 'none' }} 
                             to='/explore'>
-                                <button className='exploreLinkButton'>explore</button>
+                                <button className='linkButton'>explore</button>
                         </Link>
                         <Link 
                             style={{ textDecoration: 'none' }} 
                             to='/login'>
-                                <button className='loginButton'>login</button>
+                                <button className='linkButton'>login</button>
+                        </Link>
+                        <Link
+                            
+                            style={{ textDecoration: 'none' }} 
+                            to='/register'>
+                                <p className='registerLink'>register</p>
                         </Link>
                     </main>
                 </div>

@@ -1,17 +1,26 @@
 .registerContainer {
-    min-height: 60vh;
-    min-width: 50vh;
-    background-color: lightgrey;
-    border-radius: 20px;
+    position: relative;
+    border: 1px solid white;
+    border-radius: 2vh;
+    animation: fadeInTitle ease 2s;
+    margin: 7vh 4vh 100px 4vh;
 }
+
+@keyframes fadeInTitle{
+    0% {
+      opacity:0;
+      left:60vw;
+    }
+    100% {
+      opacity:1;
+      left:0px;
+    }
+  }
 
 .registerForm {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin: 0vh 4vh 0vh 4vh;
 }
 
 .demoButton {
@@ -19,4 +28,25 @@
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 40px;
+}
+
+.registerInput {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-family: 'Source Code Pro', monospace;
+    
+}
+
+.registerButton {
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    margin: 4vh auto 5vh auto;
+    font-family: 'Source Code Pro', monospace;
 }

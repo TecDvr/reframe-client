@@ -20,8 +20,6 @@ export default class UserHome extends React.Component {
           .then(resJSON => {
             this.setState({
               mistake: resJSON
-            }, () => {
-                console.log(this.state.mistake, 'test')
             })
           })
     }
