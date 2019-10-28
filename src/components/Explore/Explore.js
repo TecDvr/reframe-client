@@ -13,6 +13,14 @@ export default class Explore extends React.Component {
                         <h1>Explore</h1>
                     </header>
                     <div>
+                        <h2>mis·take</h2>
+                            <p>/məˈstāk/</p>
+                            <h3>noun</h3>
+                            <p>an action or judgment that is misguided or wrong.</p>
+                            <p>"coming here was a mistake"</p>
+                            <h3>verb</h3>
+                            <p>be wrong about.</p>
+                            <p>"because I was inexperienced I mistook the nature of our relationship"</p>
                         <p className='exploreText'>This section explains how to use the app and will be expanded with screen shots and live demos once all styling has been applied</p>
                         <p className='exploreText'>Reframe enables you to "reframe" your daily mistakes</p>
                         <p className='exploreText'>As a user of reframe you...</p>

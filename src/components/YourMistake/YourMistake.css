@@ -1,21 +1,30 @@
 .yourMistakeContainer {
     min-height: 10vh;
-    width: 95vw;
-    background-color: lightgrey;
+    width: 90vw;
     border-radius: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .boxText {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding: 30px 20px 20px 20px;
+}
+
+.boxTextTitle {
+    margin: 0px auto 0px auto;
+    width: 200px;
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
 .box {
+    border-radius: 7px;
     background-color: white;
     height: 20px;
     width: 20px;
@@ -23,16 +32,17 @@
 }
 
 .boxChecked {
-    background-color: red;
+    background-color: rgb(0, 80, 184);
     height: 20px;
     width: 20px;
     margin: 0px 20px 0px 10px;
-    color: white;
+    border-radius: 7px;
 }
 
 .plainText {
     text-align: left !important;
     margin: 0px;
+    width: 200px;
 }
 
 .lineItem {
@@ -46,4 +56,70 @@
     text-align: left !important;
     padding: 0px 20px 20px 20px
     
+}
+
+.buttonContainerMistake {
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 10px 0px 10px;
+}
+
+.openButton {
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 5px;
+}
+
+.mainTitle {
+    margin-bottom: 0px;
+}
+
+.mainCatch {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.reframeMistakes {
+    margin: 40px 0px 40px 0px;
+}
+
+.detailContainer {
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 15px 0px 15px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding:0px 10px 0px 10px;
+}
+
+.shareIcon {
+    height: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+ul {
+    padding: 0px 0px 0px 0px;
+    text-align: left !important;
+}
+
+.openIcon {
+    height: 15px;
+}
+
+.collapsedTitle {
+    margin-bottom: 0px;
+}
+
+.dataContainerMistake {
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 20px 0px 20px;
 }

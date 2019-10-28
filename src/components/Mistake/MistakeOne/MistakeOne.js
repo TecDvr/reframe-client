@@ -17,10 +17,8 @@ export default class MistakeOne extends React.Component {
         return (
             <div>
                 <Nav />
-                <div>
-              
-                    <main>
-                        <h3>Did you make a mistake today?</h3>
+                    <div className='mistakeoneContainer'>
+                        <h3 className='mistakeoneTitle'>Did you make a mistake today?</h3>
                         <div className='mistakeButtonCluster'>
                             <button
                             className='mistakeButton'
@@ -29,7 +27,6 @@ export default class MistakeOne extends React.Component {
                             className='mistakeButton'
                             type='submit' onClick={(e) => this.handleNoClick(e)}>no</button>
                         </div>
-                    </main>
                 </div>
             </div>
         )

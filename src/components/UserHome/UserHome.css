@@ -1,0 +1,24 @@
+.mistakeNumber {
+    display: inline-block;
+    width: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 100%;
+}
+
+.sortButton {
+    width: 80px;
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 10px;
+    margin: 0px 5px 0px 5px;
+}
+
+.sortBy {
+    display: inline-block;
+}

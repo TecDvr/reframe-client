@@ -1,4 +1,4 @@
-main {
+.mistakeoneContainer {
     margin: 15vh 0vh 0vh 0vh;
     animation: fadeInTitle ease 2s;
 }
@@ -23,4 +23,8 @@ main {
     border-radius: 100%;
     margin: 6vh 3vh 5vh 3vh;
     font-family: 'Source Code Pro', monospace;
+}
+
+.mistakeoneTitle {
+  padding: 10px;
 }

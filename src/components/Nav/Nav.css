@@ -14,7 +14,6 @@
 }
 
 .menuOption {
-    background-color: rgba(255, 255, 255, 0.3);
     margin:12px 10px 10px 1px;
     border-radius: 100%;
     height: 30px;
@@ -58,4 +57,9 @@
     background-color: rgba(255, 255, 255, 0.3);
     margin-right: 8px;
   }
+
+.menuLogo {
+    height: 17px;
+    margin-top: 6px;
+}
 

@@ -8,7 +8,8 @@ export default class UserHome extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            mistake: []
+            mistake: [],
+            sort: (a, b) => b.id - a.id
         }
     }
 
@@ -24,29 +25,41 @@ export default class UserHome extends React.Component {
           })
     }
 
+    howBadSort() {
+        this.setState({
+            sort: (a, b) => b.how_bad - a.how_bad
+        })
+    }
+
+    dateSort() {
+        this.setState({
+            sort: (a, b) => b.id - a.id
+        })
+    }
+
     render() {
         return (
             <div>
                 <Nav />
                 <div>
                     <header>
-                        <h1>User Home</h1>
+                        <h1 className='mainTitle'>mistakes</h1>
+                        <p className='mainCatch'>mis·take</p>
+                        <p className='mainCatch'>/məˈstāk/</p>
+                        <p className='reframeMistakes'>You have <span className='mistakeNumber'>{this.state.mistake.length}</span> mistakes to reframe</p>
+
+
                     </header>
+                    <div className='sortContainer'>
+                        <p className='sortBy'>sort by:</p>
+                        <button className='sortButton' onClick={() => this.dateSort()}>date</button>
+                        <button className='sortButton' onClick={() => this.howBadSort()}>how bad</button>
+                    </div>
                     <main>
-                        <div>
-                            <h2>mis·take</h2>
-                            <p>/məˈstāk/</p>
-                            <h3>noun</h3>
-                            <p>an action or judgment that is misguided or wrong.</p>
-                            <p>"coming here was a mistake"</p>
-                            <h3>verb</h3>
-                            <p>be wrong about.</p>
-                            <p>"because I was inexperienced I mistook the nature of our relationship"</p>
-                        </div>
                         <div className='mistakeMap'>
                             {this.state.mistake.filter(mistake => 
                             // eslint-disable-next-line
-                            mistake.user_id == window.localStorage.getItem('userID')).sort((a, b) => b.id - a.id).map((mistake, index) => 
+                            mistake.user_id == window.localStorage.getItem('userID')).sort(this.state.sort).map((mistake, index) => 
                                 <YourMistake 
                                     key={`mistake-${index}`}
                                     nickname={mistake.mistake_nickname}
