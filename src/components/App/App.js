@@ -12,7 +12,7 @@ import MistakeTwo from '../Mistake/MistakeTwo/MistakeTwo';
 import MistakeThree from '../Mistake/MistakeThree/MistakeThree';
 import Plan from '../Plan/Plan';
 import Feed from '../Feed/Feed';
-//import config from '../../config';
+import config from '../../config';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 export default class App extends React.Component {
@@ -40,21 +40,27 @@ export default class App extends React.Component {
         let newMistake = this.state.mistakeData;
         newMistake[key] = value;
         this.setState({ mistakeData: newMistake})
+      },
+      deleteMistake: (id) => {
+        this.setState({mistake:this.state.mistake.filter(m=>m.id!=id)})
+      },
+      updateMistake: () => {
+        this.setState({mistake: this.state.mistake})
       }
     }
   }
 
-  // componentDidMount() {
-  //   fetch(`${config.API_ENDPOINT}/mistake`, {
-  //     method: 'GET'
-  //   })
-  //   .then(res => res.json())
-  //   .then(resJSON => {
-  //     this.setState({
-  //       mistake: resJSON
-  //     })
-  //   })
-  // }
+  componentDidMount() {
+    fetch(`${config.API_ENDPOINT}/mistake`, {
+      method: 'GET'
+    })
+    .then(res => res.json())
+    .then(resJSON => {
+      this.setState({
+        mistake: resJSON
+      })
+    })
+  }
 
   render() {
     return (

@@ -2,6 +2,7 @@ import React from 'react';
 import MistakeFeed from '../MistakeFeed/MistakeFeed';
 import Nav from '../Nav/Nav';
 import config from '../../config';
+import './Feed.css';
 
 export default class Feed extends React.Component {
     constructor(props) {
@@ -40,7 +41,7 @@ export default class Feed extends React.Component {
         return (
             <div>
                 <Nav />
-                <div>
+                <div className='feedContainer'>
                     <header>
                         <p>learn from someone else's mistake</p>
                     </header>

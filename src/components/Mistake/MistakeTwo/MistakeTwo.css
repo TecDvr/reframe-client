@@ -1,8 +1,13 @@
-.mistakeContainer {
+.mistakeTwoContainer {
     min-height: 60vh;
     min-width: 50vh;
-    background-color: lightgrey;
     border-radius: 20px;
+    margin: 10px 20px 10px 20px;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    animation: fadeInTitle ease 2s;
 }
 
 .mistaketwoForm {
@@ -14,13 +19,109 @@
     padding-right: 20px;
 }
 
-.buttonContainer {
+.buttonMistakeTwoContainer {
     padding-bottom: 20px;
 }
 
 .imgButton {
+    height: 30px;
+    width: 100px;
     border: 1px solid white;
-    margin-right: 5px;
-    margin-left: 5px;
+    font-size: 12px;
+    margin: 5px 10px 5px 10px;
     border-radius: 8px;
+    color: white;
+    background-color: rgba(255, 255, 255, .3);
+    border: none;
+}
+
+.mistakeTwoInput {
+    padding: 12px 20px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.mistakeTwoLabel {
+    text-align: left;
+    font-size: 15px;
+}
+
+.shareContainer {
+    display: block;
+    position: relative;
+    padding-left: 0px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+.shareContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+.shareCheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+  
+.shareContainer:hover input ~ .shareCheckmark {
+    background-color: #ccc;
+}
+  
+.shareContainer input:checked ~ .shareCheckmark {
+    background-color: red;
+}
+  
+.shareCheckmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.shareContainer input:checked ~ .shareCheckmark:after {
+    display: block;
+}
+  
+.shareContainer .shareCheckmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.mistakeTwoButton {
+    color: white;
+    background-color: rgba(255, 255, 255, .3);
+    border: none;
+    margin: 10px auto 10px auto;
+    width: 50px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 10px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.howBadText {
+    padding: 0px 20px 0px 20px;
 }

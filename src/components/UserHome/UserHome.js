@@ -1,29 +1,31 @@
 import React from 'react';
 import YourMistake from '../YourMistake/YourMistake';
 import Nav from '../Nav/Nav';
-import config from '../../config';
+//import config from '../../config';
 import './UserHome.css';
+import ReframeContext from '../../context/reframe-context';
 
 export default class UserHome extends React.Component {
+    static contextType = ReframeContext;
     constructor(props) {
         super(props);
         this.state = {
-            mistake: [],
+            //mistake: [],
             sort: (a, b) => b.id - a.id
         }
     }
 
-    componentDidMount() {
-        fetch(`${config.API_ENDPOINT}/mistake`, {
-            method: 'GET'
-          })
-          .then(res => res.json())
-          .then(resJSON => {
-            this.setState({
-              mistake: resJSON
-            })
-          })
-    }
+    // componentDidMount() {
+    //     fetch(`${config.API_ENDPOINT}/mistake`, {
+    //         method: 'GET'
+    //       })
+    //       .then(res => res.json())
+    //       .then(resJSON => {
+    //         this.setState({
+    //           mistake: resJSON
+    //         })
+    //       })
+    // }
 
     howBadSort() {
         this.setState({
@@ -39,14 +41,14 @@ export default class UserHome extends React.Component {
 
     render() {
         return (
-            <div className='userHomeContainer'>
+            <div>
                 <Nav />
-                <div>
+                <div className='userHomeContainer'>
                     <header>
                         <h1 className='mainTitle'>mistakes</h1>
                         <p className='mainCatch'>mis·take</p>
                         <p className='mainCatch'>/məˈstāk/</p>
-                        <p className='reframeMistakes'>You have <span className='mistakeNumber'>{this.state.mistake.length}</span> mistakes to reframe</p>
+                        <p className='reframeMistakes'>You have <span className='mistakeNumber'>{this.context.mistake.length}</span> mistakes to reframe</p>
                     </header>
                     <div className='sortContainer'>
                         <p className='sortBy'>sort by:</p>
@@ -55,7 +57,7 @@ export default class UserHome extends React.Component {
                     </div>
                     <main>
                         <div className='mistakeMap'>
-                            {this.state.mistake.filter(mistake => 
+                            {this.context.mistake.filter(mistake => 
                             // eslint-disable-next-line
                             mistake.user_id == window.localStorage.getItem('userID')).sort(this.state.sort).map((mistake, index) => 
                                 <YourMistake 

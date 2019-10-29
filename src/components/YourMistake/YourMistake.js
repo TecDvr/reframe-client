@@ -65,6 +65,7 @@ class YourMistake extends React.Component {
 
     handleDelete(e) {
         e.preventDefault();
+        this.context.deleteMistake(this.props.id);
         fetch(`${config.API_ENDPOINT}/delete/${this.props.id}`, {
             method: 'DELETE'
             })
@@ -91,7 +92,7 @@ class YourMistake extends React.Component {
 
                             <div className='detailContainer'>
                                 <p><i className="far fa-calendar-check"></i> {this.props.date.slice(0, 10)}</p>
-                                {this.props.shared === true ? <p className='shareIconMain'><i className="fas fa-globe-americas"></i></p> : null}
+                                {this.props.shared === true ? <p className='shareIconMain'><i className="fas fa-globe-americas"></i></p> : <p className='shareIconMain'><i className="fas fa-folder-minus"></i></p>}
                                 <div className='mistakeWasBad'>{this.props.bad === 1 ? <p className='mistakeWasBadInsert'>Not that bad <i className="far fa-thumbs-down"></i></p> : this.props.bad === 2 ? <p className='mistakeWasBadInsert'>Kinda bad <i className="far fa-sad-tear"></i></p> : this.props.bad === 3 ? <p className='mistakeWasBadInsert'>Pretty bad <i className="fas fa-poo"></i> </p> : <p className='mistakeWasBadInsert'>Really bad <i className="fas fa-skull-crossbones"></i></p>}</div>
                             </div>
                         </div>

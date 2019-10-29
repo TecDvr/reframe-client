@@ -9,7 +9,6 @@ export default class Plan extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.context.mistakeData);
         fetch(`${config.API_ENDPOINT}/mistake`, {
             method: 'POST',
             headers: {
@@ -20,7 +19,7 @@ export default class Plan extends React.Component {
         })
         .then(res =>
             res.json().then(mistake => {
-            console.log(mistake)
+            this.context.updateMistake();
             this.props.history.push('/user')
             })
         )
@@ -37,45 +36,52 @@ export default class Plan extends React.Component {
                     </header>
                     <main>
                         <form className='planForm' onSubmit={e => this.handleSubmit(e)}>
-                            <label htmlFor='planOne'>Plan One</label>
+                            <label 
+                            className='planLabel' htmlFor='planOne'>Plan One</label>
                             <input
+                                className='planInput'
                                 type='text'
                                 required
                                 name='planOne'
                                 id='planOne'
-                                placeholder='planOne'
+                                placeholder='1st step'
                                 onChange={e => this.context.storeMistakes('plan_one', e.target.value)}>
                             </input>
-                            <label htmlFor='planTwo'>Plan Two</label>
+                            <label 
+                            className='planLabel' htmlFor='planTwo'>Plan Two</label>
                             <input
+                                className='planInput'
                                 type='text'
                                 name='planTwo'
                                 id='planTwo'
-                                placeholder='planTwo'
+                                placeholder='2nd step'
                                 onChange={e => this.context.storeMistakes('plan_two', e.target.value)}>
                             </input>
-                            <label htmlFor='planThree'>Plan Three</label>
+                            <label className='planLabel' htmlFor='planThree'>Plan Three</label>
                             <input
+                                className='planInput'
                                 type='text'
                                 name='planThree'
                                 id='planThree'
-                                placeholder='planThreee'
+                                placeholder='3rd step'
                                 onChange={e => this.context.storeMistakes('plan_three', e.target.value)}>
                             </input>
-                            <label htmlFor='planFour'>Plan Four</label>
+                            <label className='planLabel' htmlFor='planFour'>Plan Four</label>
                             <input
+                                className='planInput'
                                 type='text'
                                 name='planFour'
                                 id='planFour'
-                                placeholder='planFour'
+                                placeholder='4th step'
                                 onChange={e => this.context.storeMistakes('plan_four', e.target.value)}>
                             </input>
-                            <label htmlFor='planFive'>Plan Five</label>
+                            <label className='planLabel' htmlFor='planFive'>Plan Five</label>
                             <input
+                                className='planInput'
                                 type='text'
                                 name='planFive'
                                 id='planFive'
-                                placeholder='planFive'
+                                placeholder='5th step'
                                 onChange={e => this.context.storeMistakes('plan_five', e.target.value)}>
                             </input>
                             <button className='planButton' type='submit'>Submit</button>
