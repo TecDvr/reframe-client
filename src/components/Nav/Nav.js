@@ -41,7 +41,7 @@ export default class Nav extends React.Component {
             <Link
                 className='reframeLogo'
                 style={{ textDecoration: 'none' }}
-                to='/'></Link>
+                to='/'><p className='Icon'><i className="far fa-image"></i></p></Link>
             <Route 
               path='/login'
               render={() => <Link
@@ -74,7 +74,7 @@ export default class Nav extends React.Component {
                     <div className='menuOption popOut' onClick={() => this.handleMenu()}>
                         <Link 
                             style={{ textDecoration: 'none' }} 
-                            to='/user'><p className='menuLogo'><i class="fas fa-home"></i></p></Link>
+                            to='/user'><p className='menuLogo'><i className="fas fa-home"></i></p></Link>
                     </div>
                     <div className='menuOption popOut' onClick={() => this.handleMenu()}>
                         <Link 

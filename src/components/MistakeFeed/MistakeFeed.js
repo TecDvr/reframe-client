@@ -45,11 +45,11 @@ export default class MistakeFeed extends React.Component {
                         <p>{this.props.mistakemade}</p>
                     </div>
                     <div className='boxTitleFeed'>
-                        <p>{this.props.date.slice(0, 10)}</p>
-                        {this.props.bad === 1 ? <p className='mistakeWasBadInsert'>Not that bad</p> : this.props.bad === 2 ? <p className='mistakeWasBadInsert'>Kinda bad</p> : this.props.bad === 3 ? <p className='mistakeWasBadInsert'>Pretty bad</p> : <p className='mistakeWasBadInsert'>Really bad</p>}
+                        <p><i className="far fa-calendar-check"></i> {this.props.date.slice(0, 10)}</p>
+                        {this.props.bad === 1 ? <p className='mistakeWasBadInsert'><i className="far fa-thumbs-down"></i> Not that bad</p> : this.props.bad === 2 ? <p className='mistakeWasBadInsert'><i className="far fa-sad-tear"></i> Kinda bad</p> : this.props.bad === 3 ? <p className='mistakeWasBadInsert'><i className="fas fa-poo"></i> Pretty bad</p> : <p className='mistakeWasBadInsert'><i className="fas fa-skull-crossbones"></i> Really bad</p>}
                     </div>
                     <form onSubmit={(e) => this.handleSubmit(e)}>
-                        <label className='commentLabel' htmlFor='boxComment'>comment</label>
+                        <label className='commentLabel' htmlFor='boxComment'><i className="far fa-comments"></i> comment</label>
                         <div className='inputFeed'>
                             <input
                             className='boxComment'

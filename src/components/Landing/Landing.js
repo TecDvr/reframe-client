@@ -10,7 +10,7 @@ export default class Landing extends React.Component {
             <div>
                 <div className='landingContainer'>
                     <header>
-                        <h1 className='title'><div className='logo'></div>reframe</h1>
+                        <p className='title'><i className="far fa-image mainIcon"></i>reframe</p>
                         <p className='tagLine'>reframe your mistakes</p>
                     </header>
                     <main>

@@ -90,17 +90,17 @@ class YourMistake extends React.Component {
                             <h2 className='yourMistakeTitle'>{this.props.nickname}</h2> 
 
                             <div className='detailContainer'>
-                                <p>{this.props.date.slice(0, 10)}</p>
+                                <p><i className="far fa-calendar-check"></i> {this.props.date.slice(0, 10)}</p>
                                 {this.props.shared === true ? <p className='shareIconMain'><i className="fas fa-globe-americas"></i></p> : null}
-                                <div className='mistakeWasBad'>{this.props.bad === 1 ? <p className='mistakeWasBadInsert'>Not that bad</p> : this.props.bad === 2 ? <p className='mistakeWasBadInsert'>Kinda bad</p> : this.props.bad === 3 ? <p className='mistakeWasBadInsert'>Pretty bad</p> : <p className='mistakeWasBadInsert'>Really bad</p>}</div>
+                                <div className='mistakeWasBad'>{this.props.bad === 1 ? <p className='mistakeWasBadInsert'>Not that bad <i className="far fa-thumbs-down"></i></p> : this.props.bad === 2 ? <p className='mistakeWasBadInsert'>Kinda bad <i className="far fa-sad-tear"></i></p> : this.props.bad === 3 ? <p className='mistakeWasBadInsert'>Pretty bad <i className="fas fa-poo"></i> </p> : <p className='mistakeWasBadInsert'>Really bad <i className="fas fa-skull-crossbones"></i></p>}</div>
                             </div>
                         </div>
                         <div className='boxText'>
-                            <p className='boxTextTitle'>my mistake:</p>
+                            <p className='boxTextTitle'><i className="fas fa-chalkboard-teacher"></i> my mistake:</p>
                             <p>{this.props.mistakemade}</p>
                         </div>
                         <div className='boxText'>
-                            <p className='boxTextTitle'>my thoughts:</p>
+                            <p className='boxTextTitle'><i className="fas fa-brain"></i> my thoughts:</p>
                             <ul>
                                 <li className='lineItem'>{this.props.thoughts.went_wrong}</li>
                                 <li className='lineItem'>{this.props.thoughts.why_wrong}</li>
@@ -109,7 +109,7 @@ class YourMistake extends React.Component {
                             </ul>
                         </div>
                         <div className='boxText'>
-                            <p className='boxTextTitle'>my plan:</p>
+                            <p className='boxTextTitle'><i className="fas fa-paper-plane"></i> my plan:</p>
                             <ul>
                                 <li className='lineItem' onClick={e=>this.setState({plan_one_check: !this.state.plan_one_check}, () => {this.handleBoxCheck()})}>
                                     <p className='plainText'>{this.props.planone}</p>
@@ -136,9 +136,9 @@ class YourMistake extends React.Component {
                             </ul>
                         </div>
                         <div className='boxText'>
-                            <p className='boxTextTitle'>comments</p>
+                            <p className='boxTextTitle'><i className="far fa-comments"></i> comments</p>
                             
-                            {this.state.comment.length === 0 ? <p>no comments at this time</p> : this.state.comment.map((comments, index) => <p className='commentText' key={index}>{comments.comment}</p>)}
+                            {this.state.comment.length === 0 ? <p><i className="fas fa-comment-slash"></i> no comments at this time</p> : this.state.comment.map((comments, index) => <p className='commentText' key={index}><i className="far fa-comment"></i> {comments.comment}</p>)}
                         </div>   
                     </div> 
                     : 
@@ -147,8 +147,8 @@ class YourMistake extends React.Component {
                             <button className='openButton' onClick={() => this.handleClick()}><p className='openIcon'><i className="fas fa-bars"></i></p></button>
                             <h2 className='collapsedTitle'>{this.props.nickname}</h2>
                             <div className='dataContainerMistake'>
-                                <p>{this.props.date.slice(0, 10)}</p>
-                                {this.props.shared === true ? <p className='shareIcon'><i className="fas fa-globe-americas"></i></p> : <p>private</p>}
+                                <p><i className="far fa-calendar-check"></i> {this.props.date.slice(0, 10)}</p>
+                                {this.props.shared === true ? <p className='shareIcon'><i className="fas fa-globe-americas"></i></p> : <p className='shareIcon'><i className="fas fa-folder-minus"></i></p>}
                             </div>
                         </div>
                     </div> 

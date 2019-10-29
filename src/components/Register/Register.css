@@ -2,19 +2,23 @@
     position: relative;
     border: 1px solid white;
     border-radius: 2vh;
-    animation: fadeInTitle ease 2s;
+    animation: fadeInTitle ease .5s;
     margin: 7vh 4vh 100px 4vh;
 }
 
 @keyframes fadeInTitle{
-    0% {
-      opacity:0;
-      left:60vw;
-    }
-    100% {
-      opacity:1;
-      left:0px;
-    }
+  0% {
+    opacity:0;
+    left:60vw;
+  }
+  90% {
+    opacity:0.4;
+    left:20px;
+  }
+  100% {
+    opacity:1;
+    left:0px;
+  }
   }
 
 .registerForm {

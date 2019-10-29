@@ -2,7 +2,7 @@
     position: relative;
     border: 1px solid white;
     border-radius: 2vh;
-    animation: fadeInTitle ease 2s;
+    animation: fadeInTitle ease 0.5s;
     margin: 7vh 4vh 0vh 4vh;
     
 }
@@ -11,6 +11,10 @@
     0% {
       opacity:0;
       left:60vw;
+    }
+    80% {
+      opacity:0.4;
+      left:20px;
     }
     100% {
       opacity:1;

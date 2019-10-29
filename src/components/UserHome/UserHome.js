@@ -39,7 +39,7 @@ export default class UserHome extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='userHomeContainer'>
                 <Nav />
                 <div>
                     <header>
