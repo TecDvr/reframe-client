@@ -41,23 +41,27 @@ export default class MistakeFeed extends React.Component {
     render() {
         return (
                 <div className='mistakeBox'>
-                    <div className='boxTitle'>
-                        <p>{this.props.date.slice(0, 10)}</p>
-                    </div>
-                    <div className='boxText'>
+                    <div className='boxTextFeed'>
                         <p>{this.props.mistakemade}</p>
                     </div>
+                    <div className='boxTitleFeed'>
+                        <p>{this.props.date.slice(0, 10)}</p>
+                        {this.props.bad === 1 ? <p className='mistakeWasBadInsert'>Not that bad</p> : this.props.bad === 2 ? <p className='mistakeWasBadInsert'>Kinda bad</p> : this.props.bad === 3 ? <p className='mistakeWasBadInsert'>Pretty bad</p> : <p className='mistakeWasBadInsert'>Really bad</p>}
+                    </div>
                     <form onSubmit={(e) => this.handleSubmit(e)}>
-                        <label htmlFor='boxComment'>comment</label>
-                        <input
+                        <label className='commentLabel' htmlFor='boxComment'>comment</label>
+                        <div className='inputFeed'>
+                            <input
                             className='boxComment'
                             type='test'
                             name='boxComment'
                             id='boxComment'
                             placeholder='comment...'
                             onChange={e => this.handleChange(e)}>
-                        </input>
-                        <button className='boxCommentButton' type='submit'>submit</button>
+                            </input>
+                            <button className='boxCommentButton' type='submit'>submit</button>
+                        </div>
+                        
                     </form> 
                 </div>
         )

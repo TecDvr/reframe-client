@@ -7,7 +7,8 @@ export default class Feed extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            mistake: []
+            mistake: [],
+            sort: (a, b) => b.id - a.id
         }
     }
 
@@ -22,6 +23,18 @@ export default class Feed extends React.Component {
             })
           })
     }
+
+    howBadSort() {
+        this.setState({
+            sort: (a, b) => b.how_bad - a.how_bad
+        })
+    }
+
+    dateSort() {
+        this.setState({
+            sort: (a, b) => b.id - a.id
+        })
+    }
     
     render() {
         return (
@@ -29,16 +42,21 @@ export default class Feed extends React.Component {
                 <Nav />
                 <div>
                     <header>
-                        <h1>Mistakes Feed</h1>
-                        <p>tell the world what you did and be free</p>
+                        <p>learn from someone else's mistake</p>
                     </header>
                     <main>
-                        {this.state.mistake.sort((a, b) => b.id - a.id).map((mistake, index) => 
+                    <div className='sortContainer'>
+                        <p className='sortBy'>sort by:</p>
+                        <button className='sortButton' onClick={() => this.dateSort()}>date</button>
+                        <button className='sortButton' onClick={() => this.howBadSort()}>how bad</button>
+                    </div>
+                        {this.state.mistake.sort(this.state.sort).map((mistake, index) => 
                             <MistakeFeed 
                                 key={`mistake-${index}`}
                                 date={mistake.posting_date}
                                 mistakemade={mistake.mistake}
                                 id={mistake.id}
+                                bad={mistake.how_bad}
                             />
                         )}
                     </main>

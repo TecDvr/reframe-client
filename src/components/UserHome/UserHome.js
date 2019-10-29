@@ -47,8 +47,6 @@ export default class UserHome extends React.Component {
                         <p className='mainCatch'>mis·take</p>
                         <p className='mainCatch'>/məˈstāk/</p>
                         <p className='reframeMistakes'>You have <span className='mistakeNumber'>{this.state.mistake.length}</span> mistakes to reframe</p>
-
-
                     </header>
                     <div className='sortContainer'>
                         <p className='sortBy'>sort by:</p>

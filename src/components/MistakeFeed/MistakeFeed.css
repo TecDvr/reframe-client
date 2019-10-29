@@ -1,11 +1,49 @@
 .mistakeBox {
     min-height: 10vh;
-    min-width: 100vw;
-    background-color: lightgrey;
+    width: 90vw;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.boxText {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+.boxTextFeed {
+    padding: 0px 20px 0px 20px;
+}
+
+.boxTitleFeed {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 20px 0px 20px;
+}
+
+.boxComment {
+    min-width: 220px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.commentLabel {
+    text-align: left;
+    font-size: 15px;
+}
+
+.boxCommentButton {
+    color: white;
+    height: 43px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: none;
+    margin-left: 5px;
 }
