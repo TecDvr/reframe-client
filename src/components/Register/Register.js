@@ -30,10 +30,8 @@ export default class Register extends React.Component {
         )
     }
 
-
-
     handleVerifyPassword() {
-        if (this.state.password === this.state.verifyPassword) {
+        if (this.state.user_password === this.state.verifyPassword) {
             this.props.history.push('/user');
         } else {
             this.setState({
@@ -62,7 +60,7 @@ export default class Register extends React.Component {
                             type='text'
                             onChange={e => this.setState({username: e.target.value.trim()})}>
                         </input>
-                        {this.state.password === this.state.verifyPassword ? <label htmlFor='password'>PASSWORD</label> : <label htmlFor='password'>password</label>}
+                        {this.state.user_password === this.state.verifyPassword ? <label htmlFor='password'>PASSWORD</label> : <label htmlFor='password'>password</label>}
                         <input
                             className='registerInput'
                             required
@@ -72,7 +70,7 @@ export default class Register extends React.Component {
                             type='password'
                             onChange={e => this.setState({user_password: e.target.value.trim()})}>
                         </input>
-                        {this.state.password === this.state.verifyPassword ? <label htmlFor='verifyPassword'>VERIFY PASSWORD</label> : <label htmlFor='verifyPassword'>verify password</label>}
+                        {this.state.user_password === this.state.verifyPassword ? <label htmlFor='verifyPassword'>VERIFY PASSWORD</label> : <label htmlFor='verifyPassword'>verify password</label>}
                         <input
                             className='registerInput'
                             required

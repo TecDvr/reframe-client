@@ -42,6 +42,7 @@ export default class App extends React.Component {
         this.setState({ mistakeData: newMistake})
       },
       deleteMistake: (id) => {
+        // eslint-disable-next-line
         this.setState({mistake:this.state.mistake.filter(m=>m.id!=id)})
       },
       updateMistake: (newMistake) => {

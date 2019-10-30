@@ -34,7 +34,7 @@ export default class UserHome extends React.Component {
                             <p className='averageBadIcon'><i className="fas fa-poo"></i></p>
                             <p className='averageBadText'>pretty bad</p>
                         </div>
-                        : averageMistake >= 3.5
+                        : averageMistake > 3.4
                             ? <div>
                                 <p className='averageBadIcon'><i className="fas fa-skull-crossbones"></i></p>
                                 <p>really bad</p>
