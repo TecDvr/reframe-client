@@ -32,9 +32,7 @@ export default class MistakeFeed extends React.Component {
             body: JSON.stringify(this.state)
         })
         .then(res =>
-                res.json().then(user => {
-                console.log(user)
-                })   
+                res.json()
         )
     }
 
@@ -61,7 +59,6 @@ export default class MistakeFeed extends React.Component {
                             </input>
                             <button className='boxCommentButton' type='submit'>submit</button>
                         </div>
-                        
                     </form> 
                 </div>
         )

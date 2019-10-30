@@ -1,3 +1,9 @@
 .feedContainer {
     animation: fadeInTitle ease 2s;
 }
+
+@media only screen and (min-width: 992px) {
+    .sortContainerFeed {
+        font-size: 25px;
+    }
+}

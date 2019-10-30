@@ -32,12 +32,11 @@ export default class Plan extends React.Component {
                 <div className='planContainer'>
                     <header>
                         <h1>Plan</h1>
-                        <p>Being reasonable with your expectaions of your self is half the battle, or more!</p>
+                        <p>Being reasonable with your expectations of your self is half the battle, or more!</p>
                     </header>
                     <main>
                         <form className='planForm' onSubmit={e => this.handleSubmit(e)}>
-                            <label 
-                            className='planLabel' htmlFor='planOne'>Plan One</label>
+                            <label className='planLabel' htmlFor='planOne'>Plan One</label>
                             <input
                                 className='planInput'
                                 type='text'
@@ -47,8 +46,7 @@ export default class Plan extends React.Component {
                                 placeholder='1st step'
                                 onChange={e => this.context.storeMistakes('plan_one', e.target.value)}>
                             </input>
-                            <label 
-                            className='planLabel' htmlFor='planTwo'>Plan Two</label>
+                            <label className='planLabel' htmlFor='planTwo'>Plan Two</label>
                             <input
                                 className='planInput'
                                 type='text'

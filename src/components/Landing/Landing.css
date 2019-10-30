@@ -1,10 +1,10 @@
 .appContainer {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
 }
 
 .linkButton {
@@ -57,16 +57,6 @@
     opacity:1;
   }
 }
-
-/* .logo {
-  height: 27px;
-  width: 27px;
-  display: inline-block;
-  border: 2px solid white;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.3);
-  margin-right: 10px;
-} */
 
 .registerLink {
   color: white;

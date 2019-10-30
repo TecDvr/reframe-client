@@ -25,9 +25,5 @@
 }
 
 .mistakeoneTitle {
-  padding: 10px;
-}
-
-@media only screen and (min-width: 992px) {
-
+    padding: 10px;
 }

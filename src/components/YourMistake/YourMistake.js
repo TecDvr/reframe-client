@@ -58,9 +58,6 @@ class YourMistake extends React.Component {
             },
             body: JSON.stringify(this.state)
             })
-            .then(res => {
-                console.log('works')
-            })
     }
 
     handleDelete(e) {
@@ -68,9 +65,6 @@ class YourMistake extends React.Component {
         this.context.deleteMistake(this.props.id);
         fetch(`${config.API_ENDPOINT}/delete/${this.props.id}`, {
             method: 'DELETE'
-            })
-            .then(res => {
-                
             })
     }
 
@@ -138,7 +132,6 @@ class YourMistake extends React.Component {
                         </div>
                         <div className='boxText'>
                             <p className='boxTextTitle'><i className="far fa-comments"></i> comments</p>
-                            
                             {this.state.comment.length === 0 ? <p><i className="fas fa-comment-slash"></i> no comments at this time</p> : this.state.comment.map((comments, index) => <p className='commentText' key={index}><i className="far fa-comment"></i> {comments.comment}</p>)}
                         </div>   
                     </div> 

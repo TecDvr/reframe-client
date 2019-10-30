@@ -26,7 +26,6 @@ export default class Register extends React.Component {
         .then(res => 
             res.json().then(user => {
                 this.props.history.push('/user')
-                console.log(this.state)
             })
         )
     }

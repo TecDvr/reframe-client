@@ -2,7 +2,6 @@ import React from 'react';
 import './Login.css';
 import config from '../../config';
 import Nav from '../Nav/Nav';
-import { Link } from 'react-router-dom'
 
 export default class Login extends React.Component {
     constructor(props) {

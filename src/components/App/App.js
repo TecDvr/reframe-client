@@ -129,13 +129,6 @@ export default class App extends React.Component {
 
         </div>
       </ReframeContext.Provider>
-      
     )
   }
 }
-
-//BUGGY SHIZZ
-  //nav menu spacing, icons
-
-//VERSION TWO
-  //full demo by click of button

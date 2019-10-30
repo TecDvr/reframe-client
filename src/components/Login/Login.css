@@ -4,7 +4,6 @@
     border-radius: 2vh;
     animation: fadeInTitle ease 0.5s;
     margin: 7vh 4vh 0vh 4vh;
-    
 }
 
 @keyframes fadeInTitle{

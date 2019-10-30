@@ -25,7 +25,6 @@ export default class Landing extends React.Component {
                                 <button className='linkButton'>login</button>
                         </Link>
                         <Link
-                            
                             style={{ textDecoration: 'none' }} 
                             to='/register'>
                                 <p className='registerLink'>register</p>

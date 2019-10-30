@@ -27,7 +27,7 @@ export default class MistakeOne extends React.Component {
                             className='mistakeButton'
                             type='submit' onClick={(e) => this.handleNoClick(e)}>no</button>
                         </div>
-                </div>
+                    </div>
             </div>
         )
     }

@@ -1,7 +1,6 @@
 import React from 'react';
 import YourMistake from '../YourMistake/YourMistake';
 import Nav from '../Nav/Nav';
-//import config from '../../config';
 import './UserHome.css';
 import ReframeContext from '../../context/reframe-context';
 
@@ -10,24 +9,42 @@ export default class UserHome extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            //mistake: [],
             sort: (a, b) => b.id - a.id
         }
     }
 
-    // componentDidMount() {
-    //     fetch(`${config.API_ENDPOINT}/mistake`, {
-    //         method: 'GET'
-    //       })
-    //       .then(res => res.json())
-    //       .then(resJSON => {
-    //         this.setState({
-    //           mistake: resJSON
-    //         }, () => {
-    //             this.context.updateMistake(this.state.mistake);
-    //         })
-    //       })
-    // }
+    averageBad() {
+        const howBadArr = this.context.mistake.filter(mistake =>
+        // eslint-disable-next-line
+        mistake.user_id == window.localStorage.getItem('userID')).map(bad => bad.how_bad);
+        let averageMistake = howBadArr.reduce((a,b) => a + b / howBadArr.length, 0 );
+        return (
+            averageMistake === 1 
+                ? <div>
+                    <p className='averageBadIcon'><i className="far fa-thumbs-down"></i></p>
+                    <p className='averageBadText'>not that bad</p>
+                </div>
+                : averageMistake > 1 && averageMistake <= 2.4 
+                    ? <div>
+                        <p className='averageBadIcon'><i className="far fa-sad-tear"></i></p>
+                        <p className='averageBadText'>kinda bad</p>
+                    </div>
+                    : averageMistake > 2.4 && averageMistake <= 3.4
+                        ? <div>
+                            <p className='averageBadIcon'><i className="fas fa-poo"></i></p>
+                            <p className='averageBadText'>pretty bad</p>
+                        </div>
+                        : averageMistake >= 3.5
+                            ? <div>
+                                <p className='averageBadIcon'><i className="fas fa-skull-crossbones"></i></p>
+                                <p>really bad</p>
+                            </div>
+                            : <p>Add some mistakes!</p>
+                        
+                        
+                        
+        )
+    }
 
     howBadSort() {
         this.setState({
@@ -46,40 +63,49 @@ export default class UserHome extends React.Component {
             <div>
                 <Nav />
                 <div className='userHomeContainer'>
-                    <header>
-                        <h1 className='mainTitle'>mistakes</h1>
-                        <p className='mainCatch'>mis·take</p>
-                        <p className='mainCatch'>/məˈstāk/</p>
-                        <p className='reframeMistakes'>You have <span className='mistakeNumber'>{this.context.mistake.length}</span> mistakes to reframe</p>
-                    </header>
-                    <div className='sortContainer'>
-                        <p className='sortBy'>sort by:</p>
-                        <button className='sortButton' onClick={() => this.dateSort()}>date</button>
-                        <button className='sortButton' onClick={() => this.howBadSort()}>how bad</button>
-                    </div>
-                    <main>
-                        <div className='mistakeMap'>
-                            {this.context.mistake.filter(mistake => 
-                            // eslint-disable-next-line
-                            mistake.user_id == window.localStorage.getItem('userID')).sort(this.state.sort).map((mistake, index) => 
-                                <YourMistake 
-                                    key={`mistake-${index}`}
-                                    nickname={mistake.mistake_nickname}
-                                    date={mistake.posting_date}
-                                    mistakemade={mistake.mistake}
-                                    shared={mistake.box_checked}
-                                    planone={mistake.plan_one}
-                                    plantwo={mistake.plan_two}
-                                    planthree={mistake.plan_three}
-                                    planfour={mistake.plan_four}
-                                    planfive={mistake.plan_five}
-                                    thoughts={mistake}
-                                    id={mistake.id}
-                                    bad={mistake.how_bad}
-                                />
-                            )}
+                    <div className='headContainer'>
+                        <header>
+                            <h1 className='mainTitle'>mistakes</h1>
+                            <p className='mainCatch'>mis·take</p>
+                            <p className='mainCatch'>/məˈstāk/</p>
+                            <p className='reframeMistakes'>You have  
+                                <span className='mistakeNumber'>{this.context.mistake.filter(mistake =>
+                                // eslint-disable-next-line
+                                mistake.user_id == window.localStorage.getItem('userID')).length}
+                                </span> 
+                             mistakes to reframe</p>
+                        </header>
+                        <div className='averageContainer'>
+                            <p>On average, your mistakes are:</p>
+                            {this.averageBad()}
                         </div>
-                    </main>                
+                    </div>
+                    <div className='mistakeMap'>
+                        <div className='sortContainer'>
+                            <p className='sortBy'><i className="fas fa-sync-alt"></i> sort by:</p>
+                            <button className='sortButton' onClick={() => this.dateSort()}>date</button>
+                            <button className='sortButton' onClick={() => this.howBadSort()}>how bad</button>
+                        </div>                            
+                        {this.context.mistake.filter(mistake =>
+                        // eslint-disable-next-line
+                        mistake.user_id == window.localStorage.getItem('userID')).sort(this.state.sort).map((mistake, index) => 
+                            <YourMistake 
+                                key={`mistake-${index}`}
+                                nickname={mistake.mistake_nickname}
+                                date={mistake.posting_date}
+                                mistakemade={mistake.mistake}
+                                shared={mistake.box_checked}
+                                planone={mistake.plan_one}
+                                plantwo={mistake.plan_two}
+                                planthree={mistake.plan_three}
+                                planfour={mistake.plan_four}
+                                planfive={mistake.plan_five}
+                                thoughts={mistake}
+                                id={mistake.id}
+                                bad={mistake.how_bad}
+                            />
+                        )}
+                    </div>              
                 </div>
             </div>
         )

@@ -1,7 +1,6 @@
 import React from 'react';
 import MistakeFeed from '../MistakeFeed/MistakeFeed';
 import Nav from '../Nav/Nav';
-//import config from '../../config';
 import ReframeContext from '../../context/reframe-context';
 import './Feed.css';
 
@@ -32,11 +31,11 @@ export default class Feed extends React.Component {
                 <Nav />
                 <div className='feedContainer'>
                     <header>
-                        <p>learn from someone else's mistake</p>
+                        <p><i className="fas fa-chalkboard-teacher"></i> learn from someone else's mistake</p>
                     </header>
                     <main>
-                    <div className='sortContainer'>
-                        <p className='sortBy'>sort by:</p>
+                    <div className='sortContainerFeed'>
+                        <p className='sortBy'><i className="fas fa-sync-alt"></i> sort by:</p>
                         <button className='sortButton' onClick={() => this.dateSort()}>date</button>
                         <button className='sortButton' onClick={() => this.howBadSort()}>how bad</button>
                     </div>
@@ -52,7 +51,6 @@ export default class Feed extends React.Component {
                     </main>
                 </div>
             </div>
-           
         )
     }
 }
