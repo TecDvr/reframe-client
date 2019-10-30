@@ -72,12 +72,6 @@ export default class Login extends React.Component {
                                 <p>password: demoPassword</p>
                             </div>
                         }
-                        <Link
-                            
-                            style={{ textDecoration: 'none' }} 
-                            to='/register'>
-                                <p className='registerLoginLink'>register</p>
-                        </Link>
                         <button className='loginButton' type='submit'>submit</button>
                     </form>
                 </div>

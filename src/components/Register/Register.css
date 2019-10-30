@@ -7,19 +7,14 @@
 }
 
 @keyframes fadeInTitle{
-  0% {
-    opacity:0;
-    left:60vw;
-  }
-  90% {
-    opacity:0.4;
-    left:20px;
-  }
-  100% {
-    opacity:1;
-    left:0px;
-  }
-  }
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+
+    }
+}
 
 .registerForm {
     display: flex;
@@ -50,7 +45,16 @@
     color: white;
     height: 50px;
     width: 100px;
+    border: none;
     border-radius: 10px;
     margin: 4vh auto 5vh auto;
     font-family: 'Source Code Pro', monospace;
+}
+
+@media only screen and (min-width: 992px) {
+    .registerContainer {
+        border: none;
+        margin: 7vh auto 0vh auto;
+        width: 30vw;
+    }
 }

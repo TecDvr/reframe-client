@@ -6,11 +6,9 @@
 @keyframes fadeInTitle{
     0% {
       opacity:0;
-      left:60vw;
     }
     100% {
       opacity:1;
-      left:0px;
     }
   }
 
@@ -19,6 +17,7 @@
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
     height: 100px;
+    border: none;
     width: 100px;
     border-radius: 100%;
     margin: 6vh 3vh 5vh 3vh;
@@ -27,4 +26,8 @@
 
 .mistakeoneTitle {
   padding: 10px;
+}
+
+@media only screen and (min-width: 992px) {
+
 }

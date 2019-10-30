@@ -14,7 +14,7 @@
 }
 
 .menuOption {
-    margin:12px 10px 10px 1px;
+    margin: 12px 10px 10px 1px;
     border-radius: 100%;
     height: 30px;
     width: 30px;    
@@ -36,10 +36,6 @@
   }
 
 .reframeLogo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
     margin-left: 20px;
     color:white;
 }
@@ -49,11 +45,6 @@
   margin-left: 20px;
   color:white;
   font-size: 25px;
-}
-
-.menuLink {
-    display: flex;
-    flex-direction: row;
 }
 
 .logoNav {
@@ -70,5 +61,25 @@
     color: white;
     margin-top: 2px;
     font-size: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+  .menuOption {
+    margin: 30px 30px 10px 1px;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;    
+    border: 2px solid white;
+    
+  }
+
+  .reframeLogo {
+    margin-left: 35px;
+    color:white;
+}
+
+  .menuLogo {
+    font-size: 29px;
+}
 }
 

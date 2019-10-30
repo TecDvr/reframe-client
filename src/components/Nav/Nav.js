@@ -19,17 +19,13 @@ export default class Nav extends React.Component {
     renderLogoutLink() {
         return (
           <div className='menuLink'>
-            <Link 
-              style={{ textDecoration: 'none' }} 
-              to='/user'><p className='reframeLogo Icon'><i className="far fa-image"></i></p>
-            </Link>
             <Link
               style={{ textDecoration: 'none' }}
               onClick={() => {
                 window.localStorage.removeItem('zachs-token');
                 window.localStorage.removeItem('userID');
               }}
-              to='/'><p className='reframeLogo'>logout</p>
+              to='/'><p className='reframeLogo'><i className="far fa-image"></i> logout</p>
             </Link>
           </div>
         )
@@ -38,16 +34,12 @@ export default class Nav extends React.Component {
       renderLoginLink() {
         return (
           <div className='menuLink'>
-            <Link
-                className='reframeLogo'
-                style={{ textDecoration: 'none' }}
-                to='/'><p className='Icon'><i className="far fa-image"></i></p></Link>
             <Route 
               path='/login'
               render={() => <Link
                 style={{ textDecoration: 'none' }}
                 to='/register'>
-                <p className='reframeLogo'>register</p>
+                <p className='reframeLogo'><i className="far fa-image"></i> register</p>
               </Link>}
             />
             <Route 
@@ -55,7 +47,7 @@ export default class Nav extends React.Component {
               render={() => <Link
                 style={{ textDecoration: 'none' }}
                 to='/login'>
-                <p className='reframeLogo'>login</p>
+                <p className='reframeLogo'><i className="far fa-image"></i> login</p>
               </Link>}
             />     
           </div>

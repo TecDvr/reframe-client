@@ -23,6 +23,8 @@ export default class UserHome extends React.Component {
     //       .then(resJSON => {
     //         this.setState({
     //           mistake: resJSON
+    //         }, () => {
+    //             this.context.updateMistake(this.state.mistake);
     //         })
     //       })
     // }

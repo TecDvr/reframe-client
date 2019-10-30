@@ -12,6 +12,7 @@
   color: white;
   height: 50px;
   width: 100px;
+  border: none;
   border-radius: 10px;
   margin: 20vh 2vw 1vh 2vw;
   animation: fadeInButton ease 9s;
@@ -44,7 +45,7 @@
 }
 
 .tagLine {
-  font-size: 20px;;
+  font-size: 20px;
   animation: fadeInTag ease 7s;
 }
 
@@ -57,7 +58,7 @@
   }
 }
 
-.logo {
+/* .logo {
   height: 27px;
   width: 27px;
   display: inline-block;
@@ -65,10 +66,26 @@
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.3);
   margin-right: 10px;
-}
+} */
 
 .registerLink {
   color: white;
   opacity: 0.7;
   margin-bottom: 10vh;
+}
+
+@media only screen and (min-width: 992px) {
+  .linkButton {
+    background-color: rgba(255, 255, 255, 0);
+    height: 50px;
+    width: 100px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 6vh 2vw 1vh 2vw;
+    font-size: 20px;
+  }
+
+  .title {
+    margin-top: 30vh;
+  }
 }

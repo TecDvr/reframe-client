@@ -1,28 +1,17 @@
 import React from 'react';
 import MistakeFeed from '../MistakeFeed/MistakeFeed';
 import Nav from '../Nav/Nav';
-import config from '../../config';
+//import config from '../../config';
+import ReframeContext from '../../context/reframe-context';
 import './Feed.css';
 
 export default class Feed extends React.Component {
+    static contextType = ReframeContext;
     constructor(props) {
         super(props);
         this.state = {
-            mistake: [],
             sort: (a, b) => b.id - a.id
         }
-    }
-
-    componentDidMount() {
-        fetch(`${config.API_ENDPOINT}/mistake`, {
-            method: 'GET'
-          })
-          .then(res => res.json())
-          .then(resJSON => {
-            this.setState({
-              mistake: resJSON
-            })
-          })
     }
 
     howBadSort() {
@@ -51,7 +40,7 @@ export default class Feed extends React.Component {
                         <button className='sortButton' onClick={() => this.dateSort()}>date</button>
                         <button className='sortButton' onClick={() => this.howBadSort()}>how bad</button>
                     </div>
-                        {this.state.mistake.sort(this.state.sort).map((mistake, index) => 
+                        {this.context.mistake.sort(this.state.sort).map((mistake, index) => 
                             <MistakeFeed 
                                 key={`mistake-${index}`}
                                 date={mistake.posting_date}

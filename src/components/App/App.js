@@ -44,8 +44,8 @@ export default class App extends React.Component {
       deleteMistake: (id) => {
         this.setState({mistake:this.state.mistake.filter(m=>m.id!=id)})
       },
-      updateMistake: () => {
-        this.setState({mistake: this.state.mistake})
+      updateMistake: (newMistake) => {
+        this.setState({mistake: this.state.mistake.concat(newMistake)})
       }
     }
   }

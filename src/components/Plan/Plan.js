@@ -19,8 +19,8 @@ export default class Plan extends React.Component {
         })
         .then(res =>
             res.json().then(mistake => {
-            this.context.updateMistake();
-            this.props.history.push('/user')
+                this.context.updateMistake(mistake);
+                this.props.history.push('/user');
             })
         )
     }
