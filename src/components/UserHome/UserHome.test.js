@@ -4,40 +4,29 @@ import UserHome from './UserHome';
 import { BrowserRouter } from 'react-router-dom';
 import ReframeContext from '../../context/reframe-context';
 
-const mistake = [
+const mistake = [ 
   {
-      'id': 1,
-      'user_id': 14,
-      'posting_date': '10-31-2019',
-      'mistake_nickname': 'too old',
-      'mistake': 'not taking up coding when I was a kid',
-      'box_checked': true,
-      'went_wrong': 'didnt take up coding as kid, now its hard',
-      'why_wrong': 'my mom didnt make me do it',
-      'what_doing': 'I just wanted to be a pro surfer and didnt want to be on a computer',
-      'what_learn': 'start em early, make the big bucks',
-      'plan_one': 'research bootcamp',
-      'plan_two': 'plan time for bootcamp',
-      'plan_three': 'get funding for bootcamp',
-      'plan_four': 'fill out application',
-      'plan_five': 'quit job to focus on coding'
-  },
-  {
-    'id': 1,
-    'user_id': 14,
-    'posting_date': '10-31-2019',
-    'mistake_nickname': 'too old',
-    'mistake': 'not taking up coding when I was a kid',
-    'box_checked': true,
-    'went_wrong': 'didnt take up coding as kid, now its hard',
-    'why_wrong': 'my mom didnt make me do it',
-    'what_doing': 'I just wanted to be a pro surfer and didnt want to be on a computer',
-    'what_learn': 'start em early, make the big bucks',
-    'plan_one': 'research bootcamp',
-    'plan_two': 'plan time for bootcamp',
-    'plan_three': 'get funding for bootcamp',
-    'plan_four': 'fill out application',
-    'plan_five': 'quit job to focus on coding'
+    box_checked: false,
+    how_bad: 3,
+    id: 55,
+    mistake: "I started making too many style points and things got out of control",
+    mistake_nickname: "CSS Styling",
+    plan_five: "dont over do it",
+    plan_five_check: true,
+    plan_four: "Have a good idea of what im doing",
+    plan_four_check: false,
+    plan_one: "Keep it simple",
+    plan_one_check: null,
+    plan_three: "Take more time to layout design",
+    plan_three_check: true,
+    plan_two: "Follow my wireframe",
+    plan_two_check: null,
+    posting_date: "2019-10-28T07:00:00.000Z",
+    user_id: 4,
+    went_wrong: "My design started acting crazy",
+    what_doing: "Make an app look cool",
+    what_learn: "Keep it simple stupid",
+    why_wrong: "I made too many style points",
   }
 ]
 
@@ -45,7 +34,7 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <BrowserRouter>
-      <ReframeContext.Provider value={mistake}>
+      <ReframeContext.Provider value={{mistake: mistake}}>
         <UserHome />
       </ReframeContext.Provider> 
     </BrowserRouter>, 
