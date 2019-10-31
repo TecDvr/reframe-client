@@ -25,14 +25,14 @@ export default class Register extends React.Component {
         })
         .then(res => 
             res.json().then(user => {
-                this.props.history.push('/user')
+                this.props.history.push('/login')
             })
         )
     }
 
     handleVerifyPassword() {
         if (this.state.user_password === this.state.verifyPassword) {
-            this.props.history.push('/user');
+            this.props.history.push('/login');
         } else {
             this.setState({
                 error: true
