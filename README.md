@@ -1,4 +1,4 @@
-# Reframe - Server
+# Reframe - Client
 
 See this app live at: https://reframe.zachgw.now.sh/
 
