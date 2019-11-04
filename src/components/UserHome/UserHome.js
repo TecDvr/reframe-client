@@ -15,7 +15,6 @@ export default class UserHome extends React.Component {
 
     averageBad() {
         const howBadArr = this.context.mistake.filter(mistake =>
-        // eslint-disable-next-line
         mistake.user_id == window.localStorage.getItem('userID')).map(bad => bad.how_bad);
         let averageMistake = howBadArr.reduce((a,b) => a + b / howBadArr.length, 0 );
         return (
@@ -39,10 +38,7 @@ export default class UserHome extends React.Component {
                                 <p className='averageBadIcon'><i className="fas fa-skull-crossbones"></i></p>
                                 <p>really bad</p>
                             </div>
-                            : <p>Add some mistakes!</p>
-                        
-                        
-                        
+                            : <p>Add some mistakes!</p>   
         )
     }
 
@@ -70,7 +66,6 @@ export default class UserHome extends React.Component {
                             <p className='mainCatch'>/məˈstāk/</p>
                             <p className='reframeMistakes'>You have  
                                 <span className='mistakeNumber'>{this.context.mistake.filter(mistake =>
-                                // eslint-disable-next-line
                                 mistake.user_id == window.localStorage.getItem('userID')).length}
                                 </span> 
                              mistakes to reframe</p>
@@ -87,7 +82,6 @@ export default class UserHome extends React.Component {
                             <button className='sortButton' onClick={() => this.howBadSort()}>how bad</button>
                         </div>                            
                         {this.context.mistake.filter(mistake =>
-                        // eslint-disable-next-line
                         mistake.user_id == window.localStorage.getItem('userID')).sort(this.state.sort).map((mistake, index) => 
                             <YourMistake 
                                 key={`mistake-${index}`}

@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Landing.css';
 
-//add css webkits
-
 export default class Landing extends React.Component {
     render() {
         return (
